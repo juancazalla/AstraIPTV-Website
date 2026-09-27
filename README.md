@@ -13,6 +13,6 @@ GitHub Pages publishes the root of `main` after each push. This public repositor
 
 ## Assets and project status
 
-Screenshots show the app's demo mode with fictional titles, not bundled streams. The Apple app is not yet available on the App Store.
+Screenshots were captured on 2026-09-27 from the current Apple release build (app commit `6acf104`) on iPhone and iPad simulators. They show the app's demo mode with fictional titles, not bundled streams. The Apple app is not yet available on the App Store.
 
 The Astra brand assets and demo screenshots belong to the project. Demo photography is from Unsplash; the mountain photograph is https://images.unsplash.com/photo-1464822759023-fed622ff2c3b.
