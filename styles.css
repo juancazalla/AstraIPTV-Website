@@ -100,3 +100,14 @@ footer .wrap{flex-direction:column;gap:12px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 }
 
+
+/* App support and privacy documents share the project identity. */
+.document{max-width:900px;padding-top:72px;padding-bottom:80px}
+.document h1{font-size:clamp(42px,6vw,64px);letter-spacing:-2.5px}
+.document-lead{font-size:20px;color:var(--muted);max-width:720px}
+.document-date{font-size:13px;color:var(--muted);margin-top:32px}
+.document section{padding:36px 0 16px;border-top:1px solid var(--line);margin-top:30px}
+.document h2{font-size:28px;letter-spacing:-.7px}
+.document p{color:#cbd5cc}
+.document a{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+@media(max-width:580px){.document{padding-top:48px}.document h1{font-size:42px}.document .document-lead{font-size:18px}.nav nav{gap:10px;font-size:12px}}

@@ -18,3 +18,7 @@ Screenshots were captured on 2026-09-27 from the current Apple release build (ap
 The Astra brand assets and demo screenshots belong to the project. Demo photography is from Unsplash; the mountain photograph is https://images.unsplash.com/photo-1464822759023-fed622ff2c3b.
 
 English screenshots are separate `*-demo-en.png` assets captured from app commit `c7b9f56`, with the home screen and demo content localized to English. Spanish screenshots remain unchanged.
+
+## App support and privacy
+
+Spanish support/privacy pages are `support.html` and `privacy.html`; English equivalents are `support-en.html` and `privacy-en.html`. These cover the standalone iPhone/iPad app and its local storage, private CloudKit synchronization, provider connections and metadata services. Contact uses the developer address already present in public Git history and public website issues. Do not publish provider credentials in support reports.
