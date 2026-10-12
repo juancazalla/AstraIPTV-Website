@@ -111,3 +111,5 @@ footer .wrap{flex-direction:column;gap:12px}
 .document p{color:#cbd5cc}
 .document a{text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
 @media(max-width:580px){.document{padding-top:48px}.document h1{font-size:42px}.document .document-lead{font-size:18px}.nav nav{gap:10px;font-size:12px}}
+
+.secondary-action{font-size:14px;font-weight:650;text-decoration:underline;text-underline-offset:5px}.guide-steps{max-width:760px}.guide-steps ol{padding-left:24px}.guide-steps li{margin:12px 0}.guide-steps code{overflow-wrap:anywhere;color:var(--text)}

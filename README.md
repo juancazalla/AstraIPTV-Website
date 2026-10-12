@@ -22,3 +22,11 @@ English screenshots are separate `*-demo-en.png` assets captured from app commit
 ## App support and privacy
 
 Spanish support/privacy pages are `support.html` and `privacy.html`; English equivalents are `support-en.html` and `privacy-en.html`. These cover the standalone iPhone/iPad app and its local storage, private CloudKit synchronization, provider connections and metadata services. Contact uses the developer address already present in public Git history and public website issues. Do not publish provider credentials in support reports.
+
+## Apple acquisition channel
+
+The Spanish/English landing pages lead to `start.html` / `start-en.html` and an optional launch notification email composed by the visitor. No mail is sent automatically and no third party is invited. Support and privacy cover Apple TV as well as iPhone/iPad.
+
+App sharing links carry `utm_source=astra_app&utm_medium=share&utm_campaign=v1_apple`. These labels identify the link; this static site has no analytics SDK, so they do not by themselves count visits or attribute installs.
+
+When both Apple listings are public, replace the launch-notification action with the verified App Store URL. Generate the first campaign link in App Store Connect App Analytics and copy its actual `pt` token. The ASC provider/team IDs are not campaign tokens. Use distinct campaign names (`v1_web_es`, `v1_web_en`, `v1_app_share`, `v1_guide_es`, `v1_guide_en`), under 30 characters. Read installation/discovery reports from ASC, and compare activation in consented production installations in Firebase separately. Apple may withhold small campaign samples; unavailable data is never zero conversions. Do not launch paid traffic without an explicit budget.
