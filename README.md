@@ -1,32 +1,62 @@
 # Astra IPTV — project website
 
-Public project website for Astra IPTV, a native player in development for iPhone, iPad and Apple TV.
+The public website for Astra IPTV on iPhone, iPad and Apple TV. The public App Store launch is still being prepared. Astra is a free player for the visitor’s own authorized sources; it does not provide streams, channels or subscriptions.
 
-- Spanish: https://juancazalla.github.io/AstraIPTV-Website/
-- English: https://juancazalla.github.io/AstraIPTV-Website/en.html
+https://juancazalla.github.io/AstraIPTV-Website/
+
+## Design and languages
+
+The site follows the current Apple app: the purple Astra mark, indigo accent (`#543CFA` in light mode, `#8A76FF` in dark mode), adaptive neutral surfaces and rounded cards. It follows the system’s color scheme and works without JavaScript, external fonts, analytics, forms or first-party cookies. GitHub Pages hosts the site under its own privacy statement.
+
+Home, connection guide, support and privacy are available in all 12 complete iOS localizations. Arabic uses right-to-left layout. The language menu keeps the current page; every page has reciprocal `hreflang` links and a canonical URL.
+
+| Language | Home | Guide / support / privacy |
+| --- | --- | --- |
+| Español | `/` | `start.html`, `support.html`, `privacy.html` |
+| Español (Latinoamérica) | `es-419/` | `es-419/start.html`, `support.html`, `privacy.html` in that directory |
+| English | `en.html` | `start-en.html`, `support-en.html`, `privacy-en.html` |
+| Français | `fr/` | `start.html`, `support.html`, `privacy.html` in the locale directory |
+| Italiano | `it/` | Same page names in the locale directory |
+| Deutsch | `de/` | Same page names in the locale directory |
+| Nederlands | `nl/` | Same page names in the locale directory |
+| العربية | `ar/` | Same page names in the locale directory |
+| Bahasa Indonesia | `id/` | Same page names in the locale directory |
+| Türkçe | `tr/` | Same page names in the locale directory |
+| Português (Brasil) | `pt-BR/` | Same page names in the locale directory |
+| Português (Portugal) | `pt-PT/` | Same page names in the locale directory |
+
+The original Spanish and English URLs remain valid for existing App Store links. Japanese and Korean are not advertised: their three generic catalog entries do not constitute complete app localizations.
 
 ## Editing and publishing
 
-Static HTML and CSS, with no build tools, JavaScript, analytics or credentials. Edit `index.html` (Spanish), `en.html` (English) and `styles.css`. Keep both languages in sync. Preview with `python3 -m http.server 8080` from this directory.
+Python 3’s standard library renders 48 static HTML pages. The deployed site needs no runtime or translation service.
 
-GitHub Pages publishes the root of `main` after each push. This public repository contains only the website and selected demo assets. Application source code is maintained separately in private repositories.
+1. Edit the matching text in `content/locales/*.json`. Keep keys and factual disclosures consistent across languages.
+2. Edit shared layout in `templates/base.html` and `scripts/build.py`; edit appearance in `styles.css`.
+3. Run `python3 scripts/build.py` to regenerate HTML, `sitemap.xml` and `robots.txt`.
+4. Run `python3 scripts/validate.py` to check generated files, translation coverage, page-preserving language links, routes, anchors, image accessibility and screenshot hashes.
+5. Preview with `python3 -m http.server 8080` and check desktop, mobile, Arabic and both system color schemes.
 
-## Assets and project status
+Do not hand-edit generated HTML. CSS URLs include a content hash to refresh cached styles. The new mark uses `assets/astra-mark.png` so previous visitors do not reuse the old green icon.
 
-Screenshots were captured on 2026-09-27 from the current Apple release build (app commit `6acf104`) on iPhone and iPad simulators. They show the app's demo mode with fictional titles, not bundled streams. The Apple app is not yet available on the App Store.
+GitHub Pages publishes the root of `main` after each push. This public repository contains website text and selected demo assets. Application source and credentials stay in their separate repositories. Launch-notification links only compose an email; the visitor chooses whether to send it.
 
-The Astra brand assets and demo screenshots belong to the project. Demo photography is from Unsplash; the mountain photograph is https://images.unsplash.com/photo-1464822759023-fed622ff2c3b.
+## Real app assets
 
-English screenshots are separate `*-demo-en.png` assets captured from app commit `c7b9f56`, with the home screen and demo content localized to English. Spanish screenshots remain unchanged.
+`assets/screens/<locale>/` contains actual localized simulator screenshots of iPhone, iPad and Apple TV. They display fictional demo titles, with no bundled streams. Images are proportionally resized and encoded for the web; the app interface is not reconstructed. WebP is used in the page and JPEG in social preview metadata.
 
-## App support and privacy
+The iPhone/iPad captures are from 2026-10-09, app commit `72bc4e4e0a85c583728657179b9d47a9658a9311`. Apple TV uses the verified native captures in the app release assets. `assets/screens/manifest.json` records original paths, original screenshot hashes and output hashes. The mark is copied from the app’s BrandMark asset. Demo imagery belongs to the app’s release demo assets.
 
-Spanish support/privacy pages are `support.html` and `privacy.html`; English equivalents are `support-en.html` and `privacy-en.html`. These cover the standalone iPhone/iPad app and its local storage, private CloudKit synchronization, provider connections and metadata services. Contact uses the developer address already present in public Git history and public website issues. Do not publish provider credentials in support reports.
+To refresh assets from the local Apple checkout, install `cwebp` and use macOS `sips`, then run:
+
+```sh
+python3 scripts/import-assets.py --app-root ../AstraIPTV
+python3 scripts/build.py
+python3 scripts/validate.py
+```
 
 ## Apple acquisition channel
 
-The Spanish/English landing pages lead to `start.html` / `start-en.html` and an optional launch notification email composed by the visitor. No mail is sent automatically and no third party is invited. Support and privacy cover Apple TV as well as iPhone/iPad.
+The landing pages lead to their localized connection guide and an optional launch notification email. App sharing links carry `utm_source=astra_app&utm_medium=share&utm_campaign=v1_apple`. These labels identify the link; this static website does not count visits or attribute installs.
 
-App sharing links carry `utm_source=astra_app&utm_medium=share&utm_campaign=v1_apple`. These labels identify the link; this static site has no analytics SDK, so they do not by themselves count visits or attribute installs.
-
-When both Apple listings are public, replace the launch-notification action with the verified App Store URL. Generate the first campaign link in App Store Connect App Analytics and copy its actual `pt` token. The ASC provider/team IDs are not campaign tokens. Use distinct campaign names (`v1_web_es`, `v1_web_en`, `v1_app_share`, `v1_guide_es`, `v1_guide_en`), under 30 characters. Read installation/discovery reports from ASC, and compare activation in consented production installations in Firebase separately. Apple may withhold small campaign samples; unavailable data is never zero conversions. Do not launch paid traffic without an explicit budget.
+When the Apple listings are public, replace the launch-notification action with the verified App Store URL. Generate the first campaign link in App Store Connect App Analytics and use its actual `pt` token; ASC provider/team IDs are not campaign tokens. The draft configuration remains in `acquisition/apple-campaigns.json`. Add distinct short campaign names for the new locale routes when configuring Apple campaign links. Read acquisition reports in ASC and compare activation in consented production installations in Firebase separately. Unavailable campaign data is not zero conversions. Paid traffic requires an explicit budget.

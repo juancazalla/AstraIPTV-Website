@@ -1,0 +1,18 @@
+{
+  "base_url": "https://juancazalla.github.io/AstraIPTV-Website/",
+  "email": "juan.cazalla.17@gmail.com",
+  "locales": [
+    {"code":"es", "name":"Español", "screenshot":"es-ES"},
+    {"code":"es-419", "name":"Español (Latinoamérica)", "screenshot":"es-MX"},
+    {"code":"en", "name":"English", "screenshot":"en-US"},
+    {"code":"fr", "name":"Français", "screenshot":"fr-FR"},
+    {"code":"it", "name":"Italiano", "screenshot":"it"},
+    {"code":"de", "name":"Deutsch", "screenshot":"de-DE"},
+    {"code":"nl", "name":"Nederlands", "screenshot":"nl-NL"},
+    {"code":"ar", "name":"العربية", "screenshot":"ar-SA", "dir":"rtl"},
+    {"code":"id", "name":"Bahasa Indonesia", "screenshot":"id"},
+    {"code":"tr", "name":"Türkçe", "screenshot":"tr"},
+    {"code":"pt-BR", "name":"Português (Brasil)", "screenshot":"pt-BR"},
+    {"code":"pt-PT", "name":"Português (Portugal)", "screenshot":"pt-PT"}
+  ]
+}
