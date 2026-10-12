@@ -88,8 +88,7 @@ def home(data, prefix, urls, code):
     <section class="hero wrap">
       <div class="hero-copy">
         <span class="status"><span aria-hidden="true"></span>{t('status')}</span>
-        <p class="eyebrow">{t('eyebrow')}</p>
-        <h1><span>{t('hero_1')}</span><span>{t('hero_2')}</span><span class="accent">{t('hero_3')}</span></h1>
+        <h1>{t('hero_title')}</h1>
         <p class="hero-lead">{t('hero_lead')}</p>
         <div class="actions"><a class="button primary" href="{urls['guide']}">{t('prepare')}{icon('arrow', 20)}</a><a class="button secondary" href="{esc(mailto)}">{t('notify')}</a></div>
         <p class="availability">{t('availability')}</p>
@@ -101,11 +100,11 @@ def home(data, prefix, urls, code):
       </figure>
     </section>
     <section class="experience wrap" id="experience">
-      <div class="section-heading"><p class="eyebrow">{t('feature_eyebrow')}</p><h2>{t('feature_title')}</h2><p>{t('feature_intro')}</p></div>
+      <div class="section-heading"><h2>{t('feature_title')}</h2></div>
       <div class="feature-grid">{features}</div>
     </section>
     <section class="devices wrap">
-      <div class="section-heading"><p class="eyebrow">{t('devices_eyebrow')}</p><h2>{t('devices_title')}</h2><p>{t('devices_body')}</p></div>
+      <div class="section-heading"><h2>{t('devices_title')}</h2><p>{t('devices_body')}</p></div>
       <div class="device-grid">
         <figure class="tv-showcase"><div class="tv-frame"><img src="{source}tv.webp" width="1280" height="720" alt="{t('tv_alt')}" loading="lazy"></div><figcaption><bdi>Apple TV</bdi></figcaption></figure>
         <figure class="tablet-showcase"><div class="tablet-frame"><img src="{source}ipad.webp" width="960" height="1280" alt="{t('tablet_alt')}" loading="lazy"></div><figcaption><bdi>iPad</bdi></figcaption></figure>
@@ -142,7 +141,7 @@ def document(data, page, urls):
         related = '<div class="document-links">' + ' · '.join(links) + '</div>' if links else ''
         parts.append(f'<section id="{anchor}"><h2>{heading}</h2>{steps}{paras}{related}</section>')
     return f'''  <main id="main" class="document wrap">
-    <div class="document-header"><a class="back-link" href="{urls['home']}">{t('back')}</a><p class="eyebrow">{t(page)}</p><h1>{t(f'{page}_title')}</h1><p class="document-lead">{t(f'{page}_lead')}</p><p class="updated">{t('updated')}</p></div>
+    <div class="document-header"><a class="back-link" href="{urls['home']}">{t('back')}</a><h1>{t(f'{page}_title')}</h1><p class="document-lead">{t(f'{page}_lead')}</p><p class="updated">{t('updated')}</p></div>
     <div class="document-layout"><aside class="contents"><nav aria-label="{t(page)}"><ul>{''.join(toc)}</ul></nav></aside><article class="document-body">{''.join(parts)}</article></div>
     <div class="document-end"><a class="button primary" href="{urls['home']}">{t('back')}{icon('arrow',20)}</a></div>
   </main>'''
@@ -155,7 +154,7 @@ def render(content):
         for page in PAGES:
             prefix = '' if code in ('es', 'en') else '../'
             urls = {target: relative(code, page, code, target) for target in PAGES}
-            title = 'Astra IPTV — ' + (data['hero_1'] + ' ' + data['hero_3'] if page == 'home' else data[page])
+            title = 'Astra IPTV — ' + (data['hero_title'] if page == 'home' else data[page])
             navigation = ''.join(f'<a href="{urls[target]}"'+(' aria-current="page"' if page == target else '')+f'>{esc(data[target])}</a>' for target in ('guide','support'))
             if page == 'home':
                 navigation = f'<a href="#experience">{esc(data["experience"])}</a>' + navigation

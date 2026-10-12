@@ -6,7 +6,7 @@ https://juancazalla.github.io/AstraIPTV-Website/
 
 ## Design and languages
 
-The site follows the current Apple app: the purple Astra mark, indigo accent (`#543CFA` in light mode, `#8A76FF` in dark mode), adaptive neutral surfaces and rounded cards. It follows the system’s color scheme and works without JavaScript, external fonts, analytics, forms or first-party cookies. GitHub Pages hosts the site under its own privacy statement.
+The site follows the current Apple app: the purple Astra mark, indigo accent (`#8A76FF`), dark neutral surfaces and rounded cards. It always uses the dark theme, regardless of the system’s color scheme, and works without JavaScript, external fonts, analytics, forms or first-party cookies. GitHub Pages hosts the site under its own privacy statement.
 
 Home, connection guide, support and privacy are available in all 12 complete iOS localizations. Arabic uses right-to-left layout. The language menu keeps the current page; every page has reciprocal `hreflang` links and a canonical URL.
 
@@ -35,7 +35,7 @@ Python 3’s standard library renders 48 static HTML pages. The deployed site ne
 2. Edit shared layout in `templates/base.html` and `scripts/build.py`; edit appearance in `styles.css`.
 3. Run `python3 scripts/build.py` to regenerate HTML, `sitemap.xml` and `robots.txt`.
 4. Run `python3 scripts/validate.py` to check generated files, translation coverage, page-preserving language links, routes, anchors, image accessibility and screenshot hashes.
-5. Preview with `python3 -m http.server 8080` and check desktop, mobile, Arabic and both system color schemes.
+5. Preview with `python3 -m http.server 8080` and check desktop, mobile, Arabic and the fixed dark appearance.
 
 Do not hand-edit generated HTML. CSS URLs include a content hash to refresh cached styles. The new mark uses `assets/astra-mark.png` so previous visitors do not reuse the old green icon.
 
