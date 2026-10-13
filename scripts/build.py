@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render all 48 static pages. Python standard library; no visitor-side code."""
+"""Render the localized Apple pages and Android support/privacy pages. Python standard library; no visitor-side code."""
 import argparse
 import html
 import hashlib
@@ -147,6 +147,53 @@ def document(data, page, urls):
   </main>'''
 
 
+def android_route(code, page):
+    return f'{page}-android' + ('-en' if code == 'en' else '') + '.html'
+
+
+def android_documents(content):
+    """Android disclosures are separate from Apple CloudKit behavior."""
+    android = json.loads((ROOT / 'content/android.json').read_text())
+    assert set(android) == {'es', 'en'}
+    outputs = {}
+    names = {'es': 'Español', 'en': 'English'}
+    policies = [('Firebase', 'https://firebase.google.com/support/privacy'),
+                ('Google', 'https://policies.google.com/privacy'),
+                ('TMDB', 'https://www.themoviedb.org/privacy-policy'),
+                ('MDBList', 'https://mdblist.com/privacy/'),
+                ('GitHub', 'https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement')]
+    for code, documents in android.items():
+        assert set(documents) == {'privacy', 'support'}
+        data = content[code]
+        for page, doc in documents.items():
+            toc, sections = [], []
+            for index, (heading, paragraphs) in enumerate(doc['sections'], 1):
+                anchor = f'section-{index}'
+                toc.append(f'<li><a href="#{anchor}">{esc(heading)}</a></li>')
+                text = ''.join(f'<p>{esc(value)}</p>' for value in paragraphs)
+                sections.append(f'<section id="{anchor}"><h2>{esc(heading)}</h2>{text}</section>')
+            links = ' · '.join(f'<a href="{href}">{label}</a>' for label, href in policies)
+            if page == 'privacy':
+                sections.append(f'<div class="document-links">{links}</div>')
+            support, privacy = android_route(code, 'support'), android_route(code, 'privacy')
+            updated = ('Última actualización: 13 de octubre de 2026.' if code == 'es' else 'Last updated: 13 October 2026.')
+            body = f'<main id="main" class="document wrap"><div class="document-header"><h1>{esc(doc["title"])}</h1><p class="document-lead">{esc(doc["lead"])}</p><p class="updated">{updated}</p></div><div class="document-layout"><aside class="contents"><nav aria-label="{esc(data[page])}"><ul>{"".join(toc)}</ul></nav></aside><article class="document-body">{"".join(sections)}</article></div></main>'
+            values = {key: esc(value) for key, value in data.items()}
+            canonical = CONFIG['base_url'] + android_route(code, page)
+            alternates = '\n'.join(f'  <link rel="alternate" hreflang="{other}" href="{CONFIG["base_url"]}{android_route(other, page)}">' for other in names)
+            alternates += f'\n  <link rel="alternate" hreflang="x-default" href="{CONFIG["base_url"]}{android_route("es", page)}">'
+            language_links = '\n'.join(f'<a href="{android_route(other, page)}" lang="{other}" hreflang="{other}"'+(' aria-current="true"' if other == code else '')+f'>{name}</a>' for other, name in names.items())
+            values.update(lang=code, direction='ltr', title=esc(doc['title']), description=esc(doc['lead']), canonical=canonical,
+                alternates=alternates, prefix='', locale_name=names[code], brand=brand('', './' if code == 'es' else 'en.html'), globe=icon('globe',18),
+                navigation=f'<a href="{support}">{esc(data["support"])}</a><a href="{privacy}">{esc(data["privacy"])}</a>',
+                language_links=language_links, guide_url=support+'#section-2', support_url=support, privacy_url=privacy,
+                css_version=hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12],
+                og_image=CONFIG['base_url']+'assets/astra-mark.png', tv_alt='Astra IPTV', main=body,
+                footer=('Astra no incluye contenido audiovisual.' if code == 'es' else 'Astra does not supply audiovisual content.'))
+            outputs[android_route(code, page)] = TEMPLATE.substitute(values)
+    return outputs
+
+
 def render(content):
     outputs = {}
     for locale in LOCALES:
@@ -164,6 +211,7 @@ def render(content):
             values = {key:esc(value) for key,value in data.items()}
             values.update(lang=code, direction=locale.get('dir','ltr'), title=esc(title), description=esc(data['hero_lead'] if page=='home' else data[f'{page}_lead']), canonical=public_url(code,page), alternates=alternates, prefix=prefix, locale_name=esc(locale['name']), brand=brand(prefix,urls['home']), globe=icon('globe',18), navigation=navigation, language_links=language_links, guide_url=urls['guide'], support_url=urls['support'], privacy_url=urls['privacy'], css_version=hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12], og_image=CONFIG['base_url']+f'assets/screens/{code}/tv.jpg', main=home(data,prefix,urls,code) if page=='home' else document(data,page,urls))
             outputs[route(code,page)] = TEMPLATE.substitute(values)
+    outputs.update(android_documents(content))
     namespace='http://www.sitemaps.org/schemas/sitemap/0.9'
     ET.register_namespace('',namespace)
     sitemap = ET.Element(f'{{{namespace}}}urlset')
@@ -171,6 +219,10 @@ def render(content):
         for page in PAGES:
             url = ET.SubElement(sitemap,f'{{{namespace}}}url')
             ET.SubElement(url,f'{{{namespace}}}loc').text=public_url(locale['code'],page)
+    for code in ('es', 'en'):
+        for page in ('privacy', 'support'):
+            url = ET.SubElement(sitemap, f'{{{namespace}}}url')
+            ET.SubElement(url, f'{{{namespace}}}loc').text = CONFIG['base_url'] + android_route(code, page)
     ET.indent(sitemap)
     outputs['sitemap.xml'] = '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(sitemap,encoding='unicode') + '\n'
     outputs['robots.txt'] = 'User-agent: *\nAllow: /\nSitemap: '+CONFIG['base_url']+'sitemap.xml\n'
@@ -193,7 +245,7 @@ def main():
             path.write_text(text)
     if stale:
         raise SystemExit('Regenerate with python3 scripts/build.py: '+', '.join(stale))
-    print(f'{"Checked" if args.check else "Generated"} {len(LOCALES)} locales × {len(PAGES)} pages, sitemap and robots.txt.')
+    print(f'{"Checked" if args.check else "Generated"} {len(LOCALES)} locales × {len(PAGES)} pages plus four Android documents, sitemap and robots.txt.')
 
 
 if __name__=='__main__':

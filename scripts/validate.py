@@ -29,6 +29,10 @@ def check():
     subprocess.run([sys.executable,str(ROOT/'scripts/build.py'),'--check'],check=True)
     build.load_content()
     pages={build.route(lc['code'],kind):Page((ROOT/build.route(lc['code'],kind)).read_text()) for lc in build.LOCALES for kind in build.PAGES}
+    for code in ('es','en'):
+        for kind in ('privacy','support'):
+            name=build.android_route(code,kind)
+            pages[name]=Page((ROOT/name).read_text())
     references=0
     for locale in build.LOCALES:
         for kind in build.PAGES:
@@ -60,6 +64,26 @@ def check():
                         target_name=str(target.relative_to(ROOT))
                         target_page=pages.get(target_name)
                         assert target_page and url.fragment in target_page.ids,(name,'missing anchor',attrs[key])
+    for code in ('es', 'en'):
+        for kind in ('privacy', 'support'):
+            name=build.android_route(code,kind)
+            page=pages[name]
+            assert page.h1 == 1 and len(page.ids) == len(set(page.ids)),name
+            canonical=[attrs['href'] for tag,attrs in page.nodes if tag=='link' and attrs.get('rel')=='canonical']
+            assert canonical == [build.CONFIG['base_url']+name],name
+            languages={attrs['hreflang']:attrs['href'] for tag,attrs in page.nodes if tag=='a' and 'hreflang' in attrs}
+            assert languages == {other:build.android_route(other,kind) for other in ('es','en')},name
+            for tag,attrs in page.nodes:
+                assert tag not in ('script','iframe','form'),name
+                for key in ('href','src'):
+                    if key not in attrs: continue
+                    url=urlparse(attrs[key]);references+=1
+                    if url.scheme or url.netloc: continue
+                    target=(ROOT/unquote(url.path)) if url.path else ROOT/name
+                    if target.is_dir():target=target/'index.html'
+                    assert target.exists(),(name,attrs[key])
+                    if url.fragment:
+                        assert url.fragment in pages[str(target.relative_to(ROOT))].ids,(name,attrs[key])
     manifest=json.loads((ROOT/'assets/screens/manifest.json').read_text())
     assert len(manifest['assets'])==36
     for asset in manifest['assets']:
