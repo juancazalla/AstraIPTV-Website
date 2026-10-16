@@ -45,6 +45,7 @@ def relative(code, page, target_code, target_page):
 
 def icon(name, size=24):
     paths = {
+        'lock': '<rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',
         'globe': '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18M12 3c-5 5-5 13 0 18"/>',
         'list': '<rect x="3" y="6" width="18" height="15" rx="3"/><path d="M6 3h12M7 11h10M7 16h6"/>',
         'live': '<circle cx="12" cy="12" r="2"/><path d="M7 7a7 7 0 0 0 0 10M17 7a7 7 0 0 1 0 10M4 4a11 11 0 0 0 0 16M20 4a11 11 0 0 1 0 16"/>',
@@ -79,39 +80,43 @@ def home(data, prefix, urls, code):
     t = lambda key: esc(data[key])
     mailto = 'mailto:' + CONFIG['email'] + '?' + urlencode({'subject': data['notification_subject'], 'body': data['notification_body']})
     source = f'{prefix}assets/screens/{code}/'
+    def screen(device):
+        digest = hashlib.sha256((ROOT / f'assets/screens/{code}/{device}.webp').read_bytes()).hexdigest()[:12]
+        return f'{source}{device}.webp?v={digest}'
     features = '\n'.join(f'''<article class="feature-card">
           <span class="feature-icon">{icon(symbol, 28)}</span>
           <h3>{t(f'feature_{i}_title')}</h3><p>{t(f'feature_{i}_body')}</p>
         </article>''' for i, symbol in enumerate(('list', 'live', 'play'), 1))
     faq = '\n'.join(f'''<details class="faq-item"><summary>{t(f'faq_{i}_q')}<span class="plus" aria-hidden="true"></span></summary><p>{t(f'faq_{i}_a')}</p></details>''' for i in range(1, 5))
     return f'''  <main id="main">
-    <section class="hero wrap">
+    <section class="hero wrap" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <span class="status"><span aria-hidden="true"></span>{t('status')}</span>
-        <h1>{t('hero_title')}</h1>
+        <p class="eyebrow"><span class="spark" aria-hidden="true">✦</span><bdi>iPhone · iPad · Apple TV</bdi></p>
+        <h1 id="hero-title">{t('hero_title')} <span>{t('hero_emphasis')}</span></h1>
         <p class="hero-lead">{t('hero_lead')}</p>
-        <div class="actions"><a class="button primary" href="{urls['guide']}">{t('prepare')}{icon('arrow', 20)}</a><a class="button secondary" href="{esc(mailto)}">{t('notify')}</a></div>
-        <p class="availability">{t('availability')}</p>
+        <div class="actions"><a class="button primary" href="{esc(mailto)}">{t('notify')}{icon('arrow', 20)}</a><a class="button secondary" href="{urls['guide']}">{t('prepare')}</a></div>
         <ul class="facts"><li>{t('free')}</li><li>{t('own_content')}</li><li><bdi>iPhone · iPad · Apple TV</bdi></li></ul>
       </div>
-      <figure class="hero-visual">
-        <div class="phone-frame"><img src="{source}iphone.webp" width="864" height="1878" alt="{t('phone_alt')}" fetchpriority="high"></div>
-        <figcaption>{t('demo_caption')}</figcaption>
-      </figure>
     </section>
+    <figure class="hero-visual wrap">
+      <div class="tv-frame"><img src="{screen('tv')}" width="1600" height="900" alt="{t('tv_alt')}" fetchpriority="high"></div>
+      <figcaption><span class="screen-label"><span aria-hidden="true">✦</span> Astra <span aria-hidden="true">/</span> <bdi>Apple TV</bdi></span><span>{t('demo_caption')}</span></figcaption>
+    </figure>
     <section class="experience wrap" id="experience">
-      <div class="section-heading"><h2>{t('feature_title')}</h2></div>
+      <div class="section-heading"><p class="eyebrow">{t('experience')}</p><h2>{t('feature_title')}</h2></div>
       <div class="feature-grid">{features}</div>
     </section>
-    <section class="devices wrap">
-      <div class="section-heading"><h2>{t('devices_title')}</h2><p>{t('devices_body')}</p></div>
+    <section class="devices wrap" id="devices">
+      <div class="section-heading"><p class="eyebrow"><bdi>iPhone · iPad · Apple TV</bdi></p><h2>{t('devices_title')}</h2><p>{t('devices_body')}</p></div>
       <div class="device-grid">
-        <figure class="tv-showcase"><div class="tv-frame"><img src="{source}tv.webp" width="1280" height="720" alt="{t('tv_alt')}" loading="lazy"></div><figcaption><bdi>Apple TV</bdi></figcaption></figure>
-        <figure class="tablet-showcase"><div class="tablet-frame"><img src="{source}ipad.webp" width="960" height="1280" alt="{t('tablet_alt')}" loading="lazy"></div><figcaption><bdi>iPad</bdi></figcaption></figure>
+        <figure class="tablet-showcase"><figcaption class="device-caption"><bdi>iPad</bdi><span>{t('tablet_tagline')}</span></figcaption><div class="tablet-frame"><img src="{screen('ipad')}" width="1080" height="1440" alt="{t('tablet_alt')}" loading="lazy"></div></figure>
+        <figure class="phone-showcase"><figcaption class="device-caption"><bdi>iPhone</bdi><span>{t('phone_tagline')}</span></figcaption><div class="phone-frame"><img src="{screen('iphone')}" width="864" height="1878" alt="{t('phone_alt')}" loading="lazy"></div></figure>
       </div>
       <p class="device-note">{t('devices_note')}</p>
     </section>
-    <section class="faq wrap"><h2>{t('faq_title')}</h2><div>{faq}</div></section>
+    <section class="privacy-story wrap"><span class="privacy-symbol" aria-hidden="true">{icon('lock',36)}</span><p class="eyebrow">{t('privacy')}</p><h2>{t('privacy_headline')}</h2><p>{t('faq_3_a')}</p><a href="{urls['privacy']}">{t('privacy_title')}{icon('arrow',18)}</a></section>
+    <section class="faq wrap" id="faq"><div class="section-heading"><p class="eyebrow">FAQ</p><h2>{t('faq_title')}</h2></div><div>{faq}</div></section>
+    <section class="closing wrap"><img src="{prefix}assets/astra-mark.png" width="72" height="72" alt=""><h2>{t('closing_title')}</h2><p>{t('closing_body')}</p><a class="button primary" href="{esc(mailto)}">{t('notify')}{icon('arrow',20)}</a><p class="closing-note">{t('availability')}</p></section>
     <section class="contact wrap"><div><h2>{t('contact_title')}</h2><p>{t('contact_body')}</p></div><a class="button secondary" href="mailto:{CONFIG['email']}">{t('contact_cta')}{icon('arrow',20)}</a></section>
   </main>'''
 
@@ -201,7 +206,7 @@ def render(content):
         for page in PAGES:
             prefix = '' if code in ('es', 'en') else '../'
             urls = {target: relative(code, page, code, target) for target in PAGES}
-            title = 'Astra IPTV — ' + (data['hero_title'] if page == 'home' else data[page])
+            title = 'Astra IPTV — ' + (data['hero_title'] + ' ' + data['hero_emphasis'] if page == 'home' else data[page])
             navigation = ''.join(f'<a href="{urls[target]}"'+(' aria-current="page"' if page == target else '')+f'>{esc(data[target])}</a>' for target in ('guide','support'))
             if page == 'home':
                 navigation = f'<a href="#experience">{esc(data["experience"])}</a>' + navigation
@@ -209,7 +214,7 @@ def render(content):
             alternates = '\n'.join(f'  <link rel="alternate" hreflang="{other["code"]}" href="{public_url(other["code"],page)}">' for other in LOCALES)
             alternates += f'\n  <link rel="alternate" hreflang="x-default" href="{public_url("es",page)}">'
             values = {key:esc(value) for key,value in data.items()}
-            values.update(lang=code, direction=locale.get('dir','ltr'), title=esc(title), description=esc(data['hero_lead'] if page=='home' else data[f'{page}_lead']), canonical=public_url(code,page), alternates=alternates, prefix=prefix, locale_name=esc(locale['name']), brand=brand(prefix,urls['home']), globe=icon('globe',18), navigation=navigation, language_links=language_links, guide_url=urls['guide'], support_url=urls['support'], privacy_url=urls['privacy'], css_version=hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12], og_image=CONFIG['base_url']+f'assets/screens/{code}/tv.jpg', main=home(data,prefix,urls,code) if page=='home' else document(data,page,urls))
+            values.update(lang=code, direction=locale.get('dir','ltr'), title=esc(title), description=esc(data['hero_lead'] if page=='home' else data[f'{page}_lead']), canonical=public_url(code,page), alternates=alternates, prefix=prefix, locale_name=esc(locale['name']), brand=brand(prefix,urls['home']), globe=icon('globe',18), navigation=navigation, language_links=language_links, guide_url=urls['guide'], support_url=urls['support'], privacy_url=urls['privacy'], css_version=hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12], og_image=CONFIG['base_url']+f'assets/screens/{code}/tv.jpg?v='+hashlib.sha256((ROOT/f'assets/screens/{code}/tv.jpg').read_bytes()).hexdigest()[:12], main=home(data,prefix,urls,code) if page=='home' else document(data,page,urls))
             outputs[route(code,page)] = TEMPLATE.substitute(values)
     outputs.update(android_documents(content))
     namespace='http://www.sitemaps.org/schemas/sitemap/0.9'
