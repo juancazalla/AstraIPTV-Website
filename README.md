@@ -1,6 +1,6 @@
 # Astra IPTV — project website
 
-The public website for Astra IPTV on iPhone, iPad and Apple TV. The public App Store launch is still being prepared. Astra is a free player for the visitor’s own authorized sources; it does not provide streams, channels or subscriptions.
+The public website for Astra IPTV on iPhone, iPad and Apple TV. The app is available on the App Store for iOS/iPadOS and tvOS. Astra is a free player for the visitor’s own authorized sources; it does not provide streams, channels or subscriptions.
 
 https://juancazalla.github.io/AstraIPTV-Website/
 
@@ -39,7 +39,7 @@ Python 3’s standard library renders 48 static HTML pages. The deployed site ne
 
 Do not hand-edit generated HTML. CSS URLs include a content hash to refresh cached styles. The new mark uses `assets/astra-mark.png` so previous visitors do not reuse the old green icon.
 
-GitHub Pages publishes the root of `main` after each push. This public repository contains website text and selected demo assets. Application source and credentials stay in their separate repositories. Launch-notification links only compose an email; the visitor chooses whether to send it.
+GitHub Pages publishes the root of `main` after each push. This public repository contains website text and selected demo assets. Application source and credentials stay in their separate repositories. Download actions open the verified universal App Store link for `com.astra.iptv` (`6816906088`).
 
 ## Real app assets
 
@@ -62,9 +62,9 @@ Omitting `--native-root` restores the older fictional release screenshots. Use t
 
 ## Apple acquisition channel
 
-The landing pages lead to their localized connection guide and an optional launch notification email. App sharing links carry `utm_source=astra_app&utm_medium=share&utm_campaign=v1_apple`. These labels identify the link; this static website does not count visits or attribute installs.
+The landing pages link directly to the App Store and to their localized connection guide. App sharing links carry `utm_source=astra_app&utm_medium=share&utm_campaign=v1_apple`. These labels identify the link; this static website does not count visits or attribute installs.
 
-When the Apple listings are public, replace the launch-notification action with the verified App Store URL. Generate the first campaign link in App Store Connect App Analytics and use its actual `pt` token; ASC provider/team IDs are not campaign tokens. The draft configuration remains in `acquisition/apple-campaigns.json`. Add distinct short campaign names for the new locale routes when configuring Apple campaign links. Read acquisition reports in ASC and compare activation in consented production installations in Firebase separately. Unavailable campaign data is not zero conversions. Paid traffic requires an explicit budget.
+The iOS/iPadOS and tvOS 1.0.0 listings were verified as downloadable through ASC CLI, with public Spanish and US listings, on 2026-10-16. The store URL is configured in `content/config.json`. Generate the first campaign link in App Store Connect App Analytics and use its actual `pt` token; ASC provider/team IDs are not campaign tokens. The draft configuration remains in `acquisition/apple-campaigns.json`. Add distinct short campaign names for the new locale routes when configuring Apple campaign links. Read acquisition reports in ASC and compare activation in consented production installations in Firebase separately. Unavailable campaign data is not zero conversions. Paid traffic requires an explicit budget.
 
 ## Android review documents
 

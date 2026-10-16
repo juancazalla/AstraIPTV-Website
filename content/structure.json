@@ -44,7 +44,12 @@
         "guide_4_p0"
       ],
       "steps": [],
-      "links": []
+      "links": [
+        {
+          "label": "download",
+          "href": "app-store"
+        }
+      ]
     }
   ],
   "support": [

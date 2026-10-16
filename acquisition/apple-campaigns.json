@@ -1,7 +1,7 @@
 {
   "app_id": "6816906088",
   "provider_token": null,
-  "status": "awaiting_public_app_and_first_asc_campaign_link",
+  "status": "public_app_awaiting_first_asc_campaign_link",
   "campaigns": [
     {"name": "v1_web_es", "landing": "index.html", "audience": "Spanish Apple users with their own playlists"},
     {"name": "v1_web_en", "landing": "en.html", "audience": "English Apple users with their own playlists"},

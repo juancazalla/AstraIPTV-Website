@@ -7,7 +7,7 @@ import json
 import posixpath
 from pathlib import Path
 from string import Template
-from urllib.parse import urlencode, urlparse
+from urllib.parse import urlparse
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -78,7 +78,7 @@ def load_content():
 
 def home(data, prefix, urls, code):
     t = lambda key: esc(data[key])
-    mailto = 'mailto:' + CONFIG['email'] + '?' + urlencode({'subject': data['notification_subject'], 'body': data['notification_body']})
+    app_store_url = esc(CONFIG['app_store_url'])
     source = f'{prefix}assets/screens/{code}/'
     def screen(device):
         digest = hashlib.sha256((ROOT / f'assets/screens/{code}/{device}.webp').read_bytes()).hexdigest()[:12]
@@ -94,7 +94,7 @@ def home(data, prefix, urls, code):
         <p class="eyebrow"><span class="spark" aria-hidden="true">✦</span><bdi>iPhone · iPad · Apple TV</bdi></p>
         <h1 id="hero-title">{t('hero_title')} <span>{t('hero_emphasis')}</span></h1>
         <p class="hero-lead">{t('hero_lead')}</p>
-        <div class="actions"><a class="button primary" href="{esc(mailto)}">{t('notify')}{icon('arrow', 20)}</a><a class="button secondary" href="{urls['guide']}">{t('prepare')}</a></div>
+        <div class="actions"><a class="button primary" href="{app_store_url}">{t('download')}{icon('arrow', 20)}</a><a class="button secondary" href="{urls['guide']}">{t('prepare')}</a></div>
         <ul class="facts"><li>{t('free')}</li><li>{t('own_content')}</li><li><bdi>iPhone · iPad · Apple TV</bdi></li></ul>
       </div>
     </section>
@@ -116,7 +116,7 @@ def home(data, prefix, urls, code):
     </section>
     <section class="privacy-story wrap"><span class="privacy-symbol" aria-hidden="true">{icon('lock',36)}</span><p class="eyebrow">{t('privacy')}</p><h2>{t('privacy_headline')}</h2><p>{t('faq_3_a')}</p><a href="{urls['privacy']}">{t('privacy_title')}{icon('arrow',18)}</a></section>
     <section class="faq wrap" id="faq"><div class="section-heading"><p class="eyebrow">FAQ</p><h2>{t('faq_title')}</h2></div><div>{faq}</div></section>
-    <section class="closing wrap"><img src="{prefix}assets/astra-mark.png" width="72" height="72" alt=""><h2>{t('closing_title')}</h2><p>{t('closing_body')}</p><a class="button primary" href="{esc(mailto)}">{t('notify')}{icon('arrow',20)}</a><p class="closing-note">{t('availability')}</p></section>
+    <section class="closing wrap"><img src="{prefix}assets/astra-mark.png" width="72" height="72" alt=""><h2>{t('closing_title')}</h2><p>{t('closing_body')}</p><a class="button primary" href="{app_store_url}">{t('download')}{icon('arrow',20)}</a><p class="closing-note">{t('availability')}</p></section>
     <section class="contact wrap"><div><h2>{t('contact_title')}</h2><p>{t('contact_body')}</p></div><a class="button secondary" href="mailto:{CONFIG['email']}">{t('contact_cta')}{icon('arrow',20)}</a></section>
   </main>'''
 
@@ -133,7 +133,9 @@ def document(data, page, urls):
         links = []
         for link in section['links']:
             href, label = link['href'], link['label']
-            if href == 'privacy-en.html':
+            if href == 'app-store':
+                href, label = CONFIG['app_store_url'], data['download']
+            elif href == 'privacy-en.html':
                 href, label = urls['privacy'], data['privacy']
             elif href == 'start-en.html':
                 href, label = urls['guide'], data['guide']
