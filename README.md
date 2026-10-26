@@ -43,22 +43,19 @@ GitHub Pages publishes the root of `main` after each push. This public repositor
 
 ## Real app assets
 
-`assets/screens/<locale>/` contains actual localized simulator screenshots of iPhone, iPad and Apple TV. The 2026-10-16 batch shows Severance, Breaking Bad, The Last of Us, The Bear, Narcos and Sherlock in an external screenshot-only library. No playable streams or catalogue are bundled with Astra. Images are proportionally resized and encoded for the web; the app interface is not reconstructed. WebP is used in the page and JPEG in social preview metadata. All website images are served locally, with no visitor requests to artwork providers.
+`assets/screens/<locale>/` contains actual localized simulator screenshots of iPhone, iPad and Apple TV using Astra’s fictional demo catalogue. The website uses the archived 2026-10-09 release captures, including Última Luz and other invented titles, in all 12 languages. Use fictional titles and artwork for future screenshot updates. No playable streams or catalogue are bundled with Astra. Images are proportionally resized and encoded for the web; the app interface is not reconstructed. WebP is used in the page and JPEG in social preview metadata. All website images are served locally.
 
-`assets/screens/manifest.json` records the capture method, simulator IDs, app executable hashes, original paths, original screenshot hashes and output hashes. `assets/screens/artwork-sources.json` records the public TVmaze show pages and original promotional artwork URLs. The native PNGs, fixtures and capture metadata are retained in the private app checkout under `output/website-2026-10-16/`. The mark is copied from the app’s BrandMark asset. This website refresh does not change the app or its App Store screenshots.
+`assets/screens/manifest.json` records the capture batch, original paths, original screenshot hashes and output hashes. The native PNGs are retained in the private app checkout under `release/app-store/raw/` and `release/app-store/tvos/raw/`. The mark is copied from the app’s BrandMark asset. This website update does not change the app or its App Store screenshots.
 
-To refresh assets from the local Apple checkout, install `cwebp` and use macOS `sips`, then run:
+To refresh assets from these fictional captures, install `cwebp` and use macOS `sips`, then run:
 
 ```sh
-python3 scripts/import-assets.py --app-root ../AstraIPTV \
-  --native-root ../AstraIPTV/output/website-2026-10-16/raw \
-  --capture-date 2026-10-16 \
-  --capture-metadata ../AstraIPTV/output/website-2026-10-16/capture-metadata.json
+python3 scripts/import-assets.py --app-root ../AstraIPTV
 python3 scripts/build.py
 python3 scripts/validate.py
 ```
 
-Omitting `--native-root` restores the older fictional release screenshots. Use the explicit native batch above for the current website.
+For a new native capture batch, use the importer’s `--native-root`, `--capture-date` and `--capture-metadata` options and keep the catalogue fictional.
 
 ## Apple acquisition channel
 
