@@ -50,6 +50,9 @@ def icon(name, size=24):
         'list': '<rect x="3" y="6" width="18" height="15" rx="3"/><path d="M6 3h12M7 11h10M7 16h6"/>',
         'live': '<circle cx="12" cy="12" r="2"/><path d="M7 7a7 7 0 0 0 0 10M17 7a7 7 0 0 1 0 10M4 4a11 11 0 0 0 0 16M20 4a11 11 0 0 1 0 16"/>',
         'play': '<path d="m9 6 9 6-9 6z"/><circle cx="12" cy="12" r="10"/>',
+        'profile': '<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',
+        'sport': '<path d="M8 3h8v6a4 4 0 0 1-8 0zM8 5H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-8-3h8"/>',
+        'download': '<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
         'arrow': '<path d="M5 12h14m-5-5 5 5-5 5"/>',
     }
     return f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths[name]}</svg>'
@@ -84,12 +87,13 @@ def home(data, prefix, urls, code):
         digest = hashlib.sha256((ROOT / f'assets/screens/{code}/{device}.webp').read_bytes()).hexdigest()[:12]
         return f'{source}{device}.webp?v={digest}'
     features = '\n'.join(f'''<article class="feature-card">
-          <span class="feature-icon">{icon(symbol, 28)}</span>
+          <div class="feature-top"><span class="feature-icon">{icon(symbol, 26)}</span><span class="feature-number" aria-hidden="true">0{i}</span></div>
           <h3>{t(f'feature_{i}_title')}</h3><p>{t(f'feature_{i}_body')}</p>
-        </article>''' for i, symbol in enumerate(('list', 'live', 'play'), 1))
+        </article>''' for i, symbol in enumerate(('list', 'live', 'play', 'profile', 'sport', 'download'), 1))
     faq = '\n'.join(f'''<details class="faq-item"><summary>{t(f'faq_{i}_q')}<span class="plus" aria-hidden="true"></span></summary><p>{t(f'faq_{i}_a')}</p></details>''' for i in range(1, 5))
     return f'''  <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-layout">
       <div class="hero-copy">
         <p class="eyebrow"><span class="spark" aria-hidden="true">✦</span><bdi>iPhone · iPad · Apple TV</bdi></p>
         <h1 id="hero-title">{t('hero_title')} <span>{t('hero_emphasis')}</span></h1>
@@ -97,13 +101,18 @@ def home(data, prefix, urls, code):
         <div class="actions"><a class="button primary" href="{app_store_url}">{t('download')}{icon('arrow', 20)}</a><a class="button secondary" href="{urls['guide']}">{t('prepare')}</a></div>
         <ul class="facts"><li>{t('free')}</li><li>{t('own_content')}</li><li><bdi>iPhone · iPad · Apple TV</bdi></li></ul>
       </div>
+      <figure class="hero-visual">
+        <div class="screen-stage">
+          <div class="tv-frame"><img src="{screen('tv')}" width="1600" height="900" alt="{t('tv_alt')}" fetchpriority="high"></div>
+          <div class="hero-phone phone-frame"><img src="{screen('iphone')}" width="864" height="1878" alt="{t('phone_alt')}"></div>
+          <span class="stage-label" aria-hidden="true">Astra <span>✦</span> <bdi>Apple TV + iPhone</bdi></span>
+        </div>
+        <figcaption>{t('demo_caption')}</figcaption>
+      </figure>
+      </div>
     </section>
-    <figure class="hero-visual wrap">
-      <div class="tv-frame"><img src="{screen('tv')}" width="1600" height="900" alt="{t('tv_alt')}" fetchpriority="high"></div>
-      <figcaption><span class="screen-label"><span aria-hidden="true">✦</span> Astra <span aria-hidden="true">/</span> <bdi>Apple TV</bdi></span><span>{t('demo_caption')}</span></figcaption>
-    </figure>
     <section class="experience wrap" id="experience">
-      <div class="section-heading"><p class="eyebrow">{t('experience')}</p><h2>{t('feature_title')}</h2></div>
+      <div class="experience-heading"><div><p class="release-label">{t('release_label')}</p><h2>{t('feature_title')}</h2></div><p class="feature-intro">{t('feature_intro')}</p></div>
       <div class="feature-grid">{features}</div>
     </section>
     <section class="devices wrap" id="devices">

@@ -116,5 +116,13 @@
   "privacy_headline": "Tu biblioteca es tuya.",
   "closing_title": "Dale a tu lista un nuevo hogar.",
   "closing_body": "Tú eliges el contenido. Astra pone la experiencia.",
-  "download": "Descargar en el App Store"
+  "download": "Descargar en el App Store",
+  "release_label": "Próxima actualización · 1.0.2",
+  "feature_intro": "Más formas de seguir lo que te gusta. Perfiles, contenidos vistos y deporte en directo, con una biblioteca más ágil en cada pantalla.",
+  "feature_4_title": "Un espacio para cada perfil",
+  "feature_4_body": "Conserva los favoritos, el progreso y los contenidos vistos de cada perfil. Marca películas y series como vistas o vuelve a descubrirlas a tu ritmo.",
+  "feature_5_title": "Tu equipo, siempre cerca",
+  "feature_5_body": "Sigue marcadores en directo y guarda equipos y pilotos favoritos. Abre los canales vinculados cuando estén disponibles en tu propia fuente.",
+  "feature_6_title": "También fuera del sofá",
+  "feature_6_body": "Descarga películas y episodios compatibles en iPhone o iPad. Usa AirPlay y Picture in Picture cuando el formato y el sistema lo permitan."
 }

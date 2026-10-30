@@ -1,0 +1,262 @@
+{
+  "description": "Actual native Astra 1.0.2 simulator captures from the reviewed fictional catalogue campaign refresh-2026-10-27. Encoding and proportional resize only; no UI reconstruction.",
+  "source_commit": "c4226ec42954020bf607b5b041c3f7857c76493c",
+  "campaign": "refresh-2026-10-27",
+  "source_evidence": "release/app-store/evidence/refresh-2026-10-27/source-provenance.json",
+  "capture_method": "git archive captured HEAD, explicit DEBUG metadata adapter, native XCTest capture harness, reviewed German product-translation overlay, and reviewed real rating-card layout overlay",
+  "native_hash_verification": [
+    {
+      "locale": "es",
+      "device": "iphone",
+      "source": "release/app-store/raw/es-ES/iphone/01-library.png",
+      "source_sha256": "46285521479fee3f4251d510759b8606fa740e749e267880246e71185484c419",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-ES-iphone.json"
+    },
+    {
+      "locale": "es",
+      "device": "ipad",
+      "source": "release/app-store/raw/es-ES/ipad/01-library.png",
+      "source_sha256": "75afe202ef1c0fd6a43e18b341bc46ce68ec28ce14866385fb665061458735ed",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-ES-ipad.json"
+    },
+    {
+      "locale": "es",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/es-ES/01-library.png",
+      "source_sha256": "24751faddafbd32ba94ea8db1deb52f35db5e18bdca8490f8439d96dce865187",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-ES-tv.json"
+    },
+    {
+      "locale": "es-419",
+      "device": "iphone",
+      "source": "release/app-store/raw/es-MX/iphone/01-library.png",
+      "source_sha256": "4bf8c842d19ae3a366b19a112db7e3ed75351ae3d040051dbf796a59beff54d3",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-MX-iphone.json"
+    },
+    {
+      "locale": "es-419",
+      "device": "ipad",
+      "source": "release/app-store/raw/es-MX/ipad/01-library.png",
+      "source_sha256": "61ff64bf364a6053707090afe4006eb5bfdedb777cd2cbd8600e378c2ea2e0c8",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-MX-ipad.json"
+    },
+    {
+      "locale": "es-419",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/es-MX/01-library.png",
+      "source_sha256": "8bc0ce5b171ba12d6ab4399b582cbed3bab1778f21dcf18e2f604eab9580b956",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-MX-tv.json"
+    },
+    {
+      "locale": "en",
+      "device": "iphone",
+      "source": "release/app-store/raw/en-US/iphone/01-library.png",
+      "source_sha256": "36794446d68a43e9a7477c7aaf514a91e01d3706886eac7993fb8ac111eec95a",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/en-US-iphone.json"
+    },
+    {
+      "locale": "en",
+      "device": "ipad",
+      "source": "release/app-store/raw/en-US/ipad/01-library.png",
+      "source_sha256": "0b7fdfbd8ea2a7f3623f5127c3aa29b16f1d57aae430c9307643ae7766cf65e3",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/en-US-ipad.json"
+    },
+    {
+      "locale": "en",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/en-US/01-library.png",
+      "source_sha256": "381abf46c9f82be42c3e57421f9c7b7a97e4a854a3d1932db4e0ec48f62af2f9",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/en-US-tv.json"
+    },
+    {
+      "locale": "fr",
+      "device": "iphone",
+      "source": "release/app-store/raw/fr-FR/iphone/01-library.png",
+      "source_sha256": "afb790d8ed563bb7af1b12d86de6113bd2c4e10bd67d197bc4bae3b1b33bb125",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/fr-FR-iphone.json"
+    },
+    {
+      "locale": "fr",
+      "device": "ipad",
+      "source": "release/app-store/raw/fr-FR/ipad/01-library.png",
+      "source_sha256": "f6c4187f5926300d1ee3dc4d913cb0cec4371e63b6cc5dda2f963019190c2bcd",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/fr-FR-ipad.json"
+    },
+    {
+      "locale": "fr",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/fr-FR/01-library.png",
+      "source_sha256": "9be57d375f48dc81c26bc566ca20b04aa9225e7f6b49bbacbf51983159077329",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/fr-FR-tv.json"
+    },
+    {
+      "locale": "it",
+      "device": "iphone",
+      "source": "release/app-store/raw/it/iphone/01-library.png",
+      "source_sha256": "6e398dc532eb6fc82770d2cba77a40d74e8d2dd8643b312f609540e293345813",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/it-iphone.json"
+    },
+    {
+      "locale": "it",
+      "device": "ipad",
+      "source": "release/app-store/raw/it/ipad/01-library.png",
+      "source_sha256": "e8107395146ee857e250e76789b1e516280adcb5c6e0583792192c3f61c51ee3",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/it-ipad.json"
+    },
+    {
+      "locale": "it",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/it/01-library.png",
+      "source_sha256": "3c91ecfcf1ab43ae948aea55c22c0cc8a91ffe0727846f1eeaa2b97fdb75d346",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/it-tv.json"
+    },
+    {
+      "locale": "de",
+      "device": "iphone",
+      "source": "release/app-store/raw/de-DE/iphone/01-library.png",
+      "source_sha256": "0219cac9edf2967fb6a28126ce63117ba7043e95c38446724b87eb60ad283223",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/de-DE-iphone.json"
+    },
+    {
+      "locale": "de",
+      "device": "ipad",
+      "source": "release/app-store/raw/de-DE/ipad/01-library.png",
+      "source_sha256": "e97c1555d090b10cdf71bdd10d55dbd54cec21a3f3aaec0469b9f01a6f67c57a",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/de-DE-ipad.json"
+    },
+    {
+      "locale": "de",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/de-DE/01-library.png",
+      "source_sha256": "fe1e324c28c172380fb068f72aa6ae6307f47b3e800e7380977ce1f00fc43b54",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/de-DE-tv.json"
+    },
+    {
+      "locale": "nl",
+      "device": "iphone",
+      "source": "release/app-store/raw/nl-NL/iphone/01-library.png",
+      "source_sha256": "2f30871ec00abfa2e65f464d9f63cbc9728529b1841f2fceb738c4fada498b2b",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/nl-NL-iphone.json"
+    },
+    {
+      "locale": "nl",
+      "device": "ipad",
+      "source": "release/app-store/raw/nl-NL/ipad/01-library.png",
+      "source_sha256": "a9e33acc7d4e2f4715e0ad18c69c9a3ad4290d762740e239663fdcdd11e4607b",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/nl-NL-ipad.json"
+    },
+    {
+      "locale": "nl",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/nl-NL/01-library.png",
+      "source_sha256": "1be68dd0531ddc84116a51caf03fdff989f9fbd09b8694ac0b44486a1c9a9446",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/nl-NL-tv.json"
+    },
+    {
+      "locale": "ar",
+      "device": "iphone",
+      "source": "release/app-store/raw/ar-SA/iphone/01-library.png",
+      "source_sha256": "134ac4a788d23bf8e48f45a1edfdd3f582e35f889c0bf6e7cfbe42e42e51032e",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/ar-SA-iphone.json"
+    },
+    {
+      "locale": "ar",
+      "device": "ipad",
+      "source": "release/app-store/raw/ar-SA/ipad/01-library.png",
+      "source_sha256": "bc9425bf5300e9c846942a3f4a89f0c0b551b3828385c2c5fd41d47a1ca80bbd",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/ar-SA-ipad.json"
+    },
+    {
+      "locale": "ar",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/ar-SA/01-library.png",
+      "source_sha256": "8d5485055b1b107600968fe512d442b6c437fcd6b14dc9224b4dae437df8865d",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/ar-SA-tv.json"
+    },
+    {
+      "locale": "id",
+      "device": "iphone",
+      "source": "release/app-store/raw/id/iphone/01-library.png",
+      "source_sha256": "4e99a9e6deb301e67593ec8379374d95907a5b1cfd2c6b18d36e22a2802b53c5",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/id-iphone.json"
+    },
+    {
+      "locale": "id",
+      "device": "ipad",
+      "source": "release/app-store/raw/id/ipad/01-library.png",
+      "source_sha256": "c46c5e485ed1aef7164f74c02d6a39c8e3260658440d4fa3fbf05524a0a0fbcb",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/id-ipad.json"
+    },
+    {
+      "locale": "id",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/id/01-library.png",
+      "source_sha256": "370ccb657d6d570328d613da3591521b99f9701d00dbfdf748ba50bfa9fed5dc",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/id-tv.json"
+    },
+    {
+      "locale": "tr",
+      "device": "iphone",
+      "source": "release/app-store/raw/tr/iphone/01-library.png",
+      "source_sha256": "76fbe8f480dd74f99e05ce9a50a102ea6271655b64c40719bd75094317ba918f",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/tr-iphone.json"
+    },
+    {
+      "locale": "tr",
+      "device": "ipad",
+      "source": "release/app-store/raw/tr/ipad/01-library.png",
+      "source_sha256": "04312fb233fd654dc218afe4d8bad77307f603d133bad5b5eaab0e8c210de7cc",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/tr-ipad.json"
+    },
+    {
+      "locale": "tr",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/tr/01-library.png",
+      "source_sha256": "bc9f5254da3d92caef8e9e502f0989362c474bfa0000805601608030c3b0bf9f",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/tr-tv.json"
+    },
+    {
+      "locale": "pt-BR",
+      "device": "iphone",
+      "source": "release/app-store/raw/pt-BR/iphone/01-library.png",
+      "source_sha256": "95004b8d012040d67db6b6e42ab0b848c63a6e856594630b47301bb44202ff31",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-BR-iphone.json"
+    },
+    {
+      "locale": "pt-BR",
+      "device": "ipad",
+      "source": "release/app-store/raw/pt-BR/ipad/01-library.png",
+      "source_sha256": "f99c8750b48ca3f54273e61eba4f8e2f188c2675f8b707cce8d8558124b4aeb6",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-BR-ipad.json"
+    },
+    {
+      "locale": "pt-BR",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/pt-BR/01-library.png",
+      "source_sha256": "0f687969152fa8414549eccbf097557644db90c9838bb07c574f6a18fd27aa8c",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-BR-tv.json"
+    },
+    {
+      "locale": "pt-PT",
+      "device": "iphone",
+      "source": "release/app-store/raw/pt-PT/iphone/01-library.png",
+      "source_sha256": "ea868e2688319d93a30db1156a0fdbf980b52fec8098732eeba943819bffeb4b",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-PT-iphone.json"
+    },
+    {
+      "locale": "pt-PT",
+      "device": "ipad",
+      "source": "release/app-store/raw/pt-PT/ipad/01-library.png",
+      "source_sha256": "7ad3ab392a6aab3661eb7bf2e66872e8a6661dc638eb59ca790ff81fe28c6f30",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-PT-ipad.json"
+    },
+    {
+      "locale": "pt-PT",
+      "device": "tv",
+      "source": "release/app-store/tvos/raw/pt-PT/01-library.png",
+      "source_sha256": "f658bbc23ae64ac5ede8098f6f44b04c8ca0be189bb345c3f699f0e6dd749b46",
+      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-PT-tv.json"
+    }
+  ],
+  "capture_date": "2026-10-28"
+}
