@@ -1,0 +1,103 @@
+{
+  "campaign": "1.0.2",
+  "native_capture_batch": "2026-10-27",
+  "content": "Native Astra TV guide with fictional demo channels; resize and encode only.",
+  "assets": [
+    {
+      "locale": "es",
+      "source": "release/app-store/tvos/raw/es-ES/03-guide.png",
+      "source_sha256": "e4e49f0a0f2fa2e3b1ddb833982c11bc991daccdc448de2efc4b6deadd9a1ca8",
+      "output": "assets/screens/es/guide.webp",
+      "output_sha256": "4eee31c0bba6539a099d62ebfdd81c0b290193bf9b761d8cdb0f3eabbeb01efc",
+      "bytes": 35244
+    },
+    {
+      "locale": "es-419",
+      "source": "release/app-store/tvos/raw/es-MX/03-guide.png",
+      "source_sha256": "0b15348be2d41bd46220e98c15be36b6bf13060e03a0e3cc32392dc59af22da4",
+      "output": "assets/screens/es-419/guide.webp",
+      "output_sha256": "175aa79cdca03348998284fbac66a1fde7455f325b955e5f274b503e7ebd2da9",
+      "bytes": 36296
+    },
+    {
+      "locale": "en",
+      "source": "release/app-store/tvos/raw/en-US/03-guide.png",
+      "source_sha256": "509c28f937cf4cfb8c5ce5d8ec12b6a7d48850bf47ed843afcb1ab53aeed6427",
+      "output": "assets/screens/en/guide.webp",
+      "output_sha256": "ae5ed6a3f08357f6b129887aaf282a7aed290d5ce5ef8820f7d4e0242592f7b9",
+      "bytes": 34896
+    },
+    {
+      "locale": "fr",
+      "source": "release/app-store/tvos/raw/fr-FR/03-guide.png",
+      "source_sha256": "fa7ec7b59d7d5d184196de6e5ec3d911d73c8658e3ad36b7a9c83c700bfa8e68",
+      "output": "assets/screens/fr/guide.webp",
+      "output_sha256": "41e985985230d2fde6135369fc2834d42a8c7586b3cd9555828da4fd25de3450",
+      "bytes": 37506
+    },
+    {
+      "locale": "it",
+      "source": "release/app-store/tvos/raw/it/03-guide.png",
+      "source_sha256": "55493a068ee3ed98d0cbe5896c8df4f356582a52b26aa8fe39c71ce460bfaefa",
+      "output": "assets/screens/it/guide.webp",
+      "output_sha256": "5a132927ce9941b8b0f585c4675064c0e11d5d3094bb1372b06121e1f93c928e",
+      "bytes": 37468
+    },
+    {
+      "locale": "de",
+      "source": "release/app-store/tvos/raw/de-DE/03-guide.png",
+      "source_sha256": "9525cf70e7bf568d0af9d2072b00db0243898ec6829b803341152190248aa264",
+      "output": "assets/screens/de/guide.webp",
+      "output_sha256": "3d71058ff39d208e8e6ce7cfe525b4e257ed7fb61508323bb0e328fd23bc4883",
+      "bytes": 34754
+    },
+    {
+      "locale": "nl",
+      "source": "release/app-store/tvos/raw/nl-NL/03-guide.png",
+      "source_sha256": "3713cd75f43bda6971d3db358ec564ca2c5123a2d0279b3fc27775b210679609",
+      "output": "assets/screens/nl/guide.webp",
+      "output_sha256": "3eff1d68ed0a9f89d9bc5d9b4e4f5eb3b644f209cc1ebb7f1cbf205eda73f9c3",
+      "bytes": 34966
+    },
+    {
+      "locale": "ar",
+      "source": "release/app-store/tvos/raw/ar-SA/03-guide.png",
+      "source_sha256": "2a6caee5897628ce911879b59bdcd05ded3b0990f68cdbe840db4871d8fed747",
+      "output": "assets/screens/ar/guide.webp",
+      "output_sha256": "6cc16369d0ad1c184185ab3a1935d9ed6fe714196429669eb9edc79a4fb4327f",
+      "bytes": 34892
+    },
+    {
+      "locale": "id",
+      "source": "release/app-store/tvos/raw/id/03-guide.png",
+      "source_sha256": "a9224dfe8575dee67e59805925208cc416e83841b2e5a306738e8084e364f085",
+      "output": "assets/screens/id/guide.webp",
+      "output_sha256": "d12e725ccc745137cf1cfdd8b8b4c88e5f9a95e2f3f264802171f7807faf2628",
+      "bytes": 42452
+    },
+    {
+      "locale": "tr",
+      "source": "release/app-store/tvos/raw/tr/03-guide.png",
+      "source_sha256": "0223b4b9e741c7ecc8f63b3740b56baf8d927beae3f39136626a3affc0b9c313",
+      "output": "assets/screens/tr/guide.webp",
+      "output_sha256": "55e82006b38500bf89f871c383ab47420529647e9e0f1b377522ec20478c6ba5",
+      "bytes": 35152
+    },
+    {
+      "locale": "pt-BR",
+      "source": "release/app-store/tvos/raw/pt-BR/03-guide.png",
+      "source_sha256": "e94a69210115724fb6dbc7aa6e14ca3a7a2fad00ea36415e672a6aefe53d260a",
+      "output": "assets/screens/pt-BR/guide.webp",
+      "output_sha256": "e08782815afbbea6e0f0a053e648190054273f40c47ae08d2329383be358526a",
+      "bytes": 36928
+    },
+    {
+      "locale": "pt-PT",
+      "source": "release/app-store/tvos/raw/pt-PT/03-guide.png",
+      "source_sha256": "0eddeb7ebc4dad3da814ea8029f7fe888e71a6a2ea516e05b946be19fde31275",
+      "output": "assets/screens/pt-PT/guide.webp",
+      "output_sha256": "f5dc0d369559fa19b5b890dfab619fc6b07d0e371d0771be6a8810eea71dcea3",
+      "bytes": 37358
+    }
+  ]
+}

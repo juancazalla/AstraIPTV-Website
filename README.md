@@ -29,7 +29,7 @@ The original Spanish and English URLs remain valid for existing App Store links.
 
 ## Editing and publishing
 
-Python 3’s standard library renders 48 static HTML pages. The deployed site needs no runtime or translation service.
+Python 3’s standard library renders 64 static HTML pages, including twelve Televizo alternative pages and four Android documents. The deployed site needs no runtime or translation service.
 
 1. Edit the matching text in `content/locales/*.json`. Keep keys and factual disclosures consistent across languages.
 2. Edit shared layout in `templates/base.html` and `scripts/build.py`; edit appearance in `styles.css`.
@@ -62,6 +62,14 @@ For a new native capture batch, use the importer’s `--native-root`, `--capture
 The landing pages link directly to the App Store and to their localized connection guide. App sharing links carry `utm_source=astra_app&utm_medium=share&utm_campaign=v1_apple`. These labels identify the link; this static website does not count visits or attribute installs.
 
 The iOS/iPadOS and tvOS 1.0.0 listings were verified as downloadable through ASC CLI, with public Spanish and US listings, on 2026-10-16. The store URL is configured in `content/config.json`. Generate the first campaign link in App Store Connect App Analytics and use its actual `pt` token; ASC provider/team IDs are not campaign tokens. The draft configuration remains in `acquisition/apple-campaigns.json`. Add distinct short campaign names for the new locale routes when configuring Apple campaign links. Read acquisition reports in ASC and compare activation in consented production installations in Firebase separately. Unavailable campaign data is not zero conversions. Paid traffic requires an explicit budget.
+
+### Televizo searches
+
+The `televizo-ios.html` page, `televizo-ios-en.html` and `<locale>/televizo-ios.html` routes explain Astra as an independent alternative for Apple devices. They cover all twelve site languages and the fifteen researched storefronts without duplicating pages for countries sharing a language. `content/televizo.json` holds the copy. Every localized page has a download action, source reconnection instructions, a current reference to Televizo’s own website, a clear independence notice and a real localized Astra channel-guide screenshot. Footer links, reciprocal language menus and the sitemap make the pages discoverable. Publishing these pages does not prove indexing, web ranking or App Store ranking gains.
+
+The additional guide images are encoded from the frozen, fictional 1.0.2 native captures. To refresh this set, run `python3 scripts/import-guide-assets.py --app-root ../AstraIPTV` before regenerating the pages. All inputs are checked against the release campaign hashes before any public image is overwritten. `assets/screens/guide-manifest.json` records source and output hashes; the normal validation checks these twelve outputs as well as the 36 original images. Do not substitute screenshots from another app or from a private playlist.
+
+The campaign names in `acquisition/apple-campaigns.json` are preparation for App Analytics links. The provider token is still unset; the pages deliberately use the working universal App Store link and do not claim attributed installs. A separate live-TV product page is being prepared in App Store Connect; do not link visitors to its `ppid` until its approved, available state has been checked. Advertising and organic rankings must be measured separately.
 
 ## Android review documents
 

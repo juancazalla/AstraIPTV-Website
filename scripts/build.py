@@ -15,7 +15,15 @@ CONFIG = json.loads((ROOT / 'content/config.json').read_text())
 LOCALES = CONFIG['locales']
 STRUCTURE = json.loads((ROOT / 'content/structure.json').read_text())
 TEMPLATE = Template((ROOT / 'templates/base.html').read_text())
-PAGES = ('home', 'guide', 'support', 'privacy')
+PAGES = ('home', 'guide', 'support', 'privacy', 'televizo')
+COMPARISONS = json.loads((ROOT / 'content/televizo.json').read_text())
+STRUCTURE['televizo'] = [
+    {'heading': f'televizo_{i}_heading', 'paragraphs': [f'televizo_{i}_p0'],
+     'steps': ['televizo_step0', 'televizo_step1', 'televizo_step2'] if i == 2 else [],
+     'links': ([{'label': 'Televizo', 'href': 'https://televizo.net/'}] if i == 0 else
+               [{'label': 'M3U, Xtream and Apple TV guide', 'href': 'start-en.html'}] if i == 2 else [])}
+    for i in range(5)
+]
 
 
 def esc(text):
@@ -23,7 +31,7 @@ def esc(text):
 
 
 def route(code, page):
-    stem = {'home': 'index', 'guide': 'start', 'support': 'support', 'privacy': 'privacy'}[page]
+    stem = {'home': 'index', 'guide': 'start', 'support': 'support', 'privacy': 'privacy', 'televizo': 'televizo-ios'}[page]
     if code == 'es':
         return f'{stem}.html'
     if code == 'en':
@@ -68,6 +76,9 @@ def brand(prefix, home_url):
 def load_content():
     content = {}
     keys = None
+    if set(COMPARISONS) != {locale['code'] for locale in LOCALES}:
+        raise ValueError('Televizo page localization coverage does not match site locales')
+    comparison_keys = set(COMPARISONS['es'])
     for locale in LOCALES:
         code = locale['code']
         data = json.loads((ROOT / f'content/locales/{code}.json').read_text())
@@ -75,6 +86,11 @@ def load_content():
             keys = set(data)
         if set(data) != keys or any(not isinstance(value, str) or not value.strip() for value in data.values()):
             raise ValueError(f'{code}: incomplete localization')
+        comparison = COMPARISONS[code]
+        if (set(comparison) != comparison_keys or set(comparison) & set(data)
+                or any(not isinstance(value, str) or not value.strip() for value in comparison.values())):
+            raise ValueError(f'{code}: incomplete or conflicting comparison localization')
+        data.update(comparison)
         content[code] = data
     return content
 
@@ -130,7 +146,7 @@ def home(data, prefix, urls, code):
   </main>'''
 
 
-def document(data, page, urls):
+def document(data, page, urls, prefix='', code='es'):
     t = lambda key: esc(data[key])
     parts, toc = [], []
     for i, section in enumerate(STRUCTURE[page]):
@@ -155,9 +171,22 @@ def document(data, page, urls):
                 label = {'www.apple.com':'Apple', 'firebase.google.com':'Firebase', 'policies.google.com':'Google', 'docs.github.com':'GitHub', 'github.com':'GitHub', 'www.themoviedb.org':'TMDB', 'mdblist.com':'MDBList', 'unsplash.com':'Unsplash'}.get(domain, label)
             links.append(f'<a href="{esc(href)}"><bdi>{esc(label)}</bdi></a>')
         related = '<div class="document-links">' + ' · '.join(links) + '</div>' if links else ''
-        parts.append(f'<section id="{anchor}"><h2>{heading}</h2>{steps}{paras}{related}</section>')
+        section_body = paras + steps if page == 'televizo' else steps + paras
+        parts.append(f'<section id="{anchor}"><h2>{heading}</h2>{section_body}{related}</section>')
+    updated = t('televizo_updated' if page == 'televizo' else 'updated')
+    header = f'<div class="document-header"><a class="back-link" href="{urls["home"]}">{t("back")}</a><h1>{t(f"{page}_title")}</h1><p class="document-lead">{t(f"{page}_lead")}</p>'
+    if page == 'televizo':
+        app_store_url = esc(CONFIG['app_store_url'])
+        header += f'<p class="comparison-notice">{t("televizo_notice")}</p><div class="actions"><a class="button primary" href="{app_store_url}">{t("download")}{icon("arrow",20)}</a><a class="button secondary" href="{urls["guide"]}">{t("guide")}</a></div>'
+        header += f'<p class="updated">{updated}</p></div>'
+        image = f'{prefix}assets/screens/{code}/guide.webp'
+        digest = hashlib.sha256((ROOT / f'assets/screens/{code}/guide.webp').read_bytes()).hexdigest()[:12]
+        preview = f'<figure class="comparison-preview"><div class="tv-frame"><img src="{image}?v={digest}" width="1600" height="900" alt="{t("televizo_image_alt")}" fetchpriority="high"></div><figcaption>{t("televizo_image_caption")}</figcaption></figure>'
+        header = f'<div class="comparison-header">{header}{preview}</div>'
+    else:
+        header += f'<p class="updated">{updated}</p></div>'
     return f'''  <main id="main" class="document wrap">
-    <div class="document-header"><a class="back-link" href="{urls['home']}">{t('back')}</a><h1>{t(f'{page}_title')}</h1><p class="document-lead">{t(f'{page}_lead')}</p><p class="updated">{t('updated')}</p></div>
+    {header}
     <div class="document-layout"><aside class="contents"><nav aria-label="{t(page)}"><ul>{''.join(toc)}</ul></nav></aside><article class="document-body">{''.join(parts)}</article></div>
     <div class="document-end"><a class="button primary" href="{urls['home']}">{t('back')}{icon('arrow',20)}</a></div>
   </main>'''
@@ -202,7 +231,7 @@ def android_documents(content):
             values.update(lang=code, direction='ltr', title=esc(doc['title']), description=esc(doc['lead']), canonical=canonical,
                 alternates=alternates, prefix='', locale_name=names[code], brand=brand('', './' if code == 'es' else 'en.html'), globe=icon('globe',18),
                 navigation=f'<a href="{support}">{esc(data["support"])}</a><a href="{privacy}">{esc(data["privacy"])}</a>',
-                language_links=language_links, guide_url=support+'#section-2', support_url=support, privacy_url=privacy,
+                language_links=language_links, guide_url=support+'#section-2', support_url=support, privacy_url=privacy, televizo_url=route(code, 'televizo'),
                 css_version=hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12],
                 og_image=CONFIG['base_url']+'assets/astra-mark.png', tv_alt='Astra IPTV', main=body,
                 footer=('Astra no incluye contenido audiovisual.' if code == 'es' else 'Astra does not supply audiovisual content.'))
@@ -217,7 +246,7 @@ def render(content):
         for page in PAGES:
             prefix = '' if code in ('es', 'en') else '../'
             urls = {target: relative(code, page, code, target) for target in PAGES}
-            title = 'Astra IPTV — ' + (data['hero_title'] + ' ' + data['hero_emphasis'] if page == 'home' else data[page])
+            title = 'Astra IPTV — ' + (data['hero_title'] + ' ' + data['hero_emphasis'] if page == 'home' else data['televizo_title'] if page == 'televizo' else data[page])
             navigation = ''.join(f'<a href="{urls[target]}"'+(' aria-current="page"' if page == target else '')+f'>{esc(data[target])}</a>' for target in ('guide','support'))
             if page == 'home':
                 navigation = f'<a href="#experience">{esc(data["experience"])}</a>' + navigation
@@ -225,7 +254,7 @@ def render(content):
             alternates = '\n'.join(f'  <link rel="alternate" hreflang="{other["code"]}" href="{public_url(other["code"],page)}">' for other in LOCALES)
             alternates += f'\n  <link rel="alternate" hreflang="x-default" href="{public_url("es",page)}">'
             values = {key:esc(value) for key,value in data.items()}
-            values.update(lang=code, direction=locale.get('dir','ltr'), title=esc(title), description=esc(data['hero_lead'] if page=='home' else data[f'{page}_lead']), canonical=public_url(code,page), alternates=alternates, prefix=prefix, locale_name=esc(locale['name']), brand=brand(prefix,urls['home']), globe=icon('globe',18), navigation=navigation, language_links=language_links, guide_url=urls['guide'], support_url=urls['support'], privacy_url=urls['privacy'], css_version=hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12], og_image=CONFIG['base_url']+f'assets/screens/{code}/tv.jpg?v='+hashlib.sha256((ROOT/f'assets/screens/{code}/tv.jpg').read_bytes()).hexdigest()[:12], main=home(data,prefix,urls,code) if page=='home' else document(data,page,urls))
+            values.update(lang=code, direction=locale.get('dir','ltr'), title=esc(title), description=esc(data['hero_lead'] if page=='home' else data[f'{page}_lead']), canonical=public_url(code,page), alternates=alternates, prefix=prefix, locale_name=esc(locale['name']), brand=brand(prefix,urls['home']), globe=icon('globe',18), navigation=navigation, language_links=language_links, guide_url=urls['guide'], support_url=urls['support'], privacy_url=urls['privacy'], televizo_url=urls['televizo'], css_version=hashlib.sha256((ROOT/'styles.css').read_bytes()).hexdigest()[:12], og_image=CONFIG['base_url']+f'assets/screens/{code}/tv.jpg?v='+hashlib.sha256((ROOT/f'assets/screens/{code}/tv.jpg').read_bytes()).hexdigest()[:12], main=home(data,prefix,urls,code) if page=='home' else document(data,page,urls,prefix,code))
             outputs[route(code,page)] = TEMPLATE.substitute(values)
     outputs.update(android_documents(content))
     namespace='http://www.sitemaps.org/schemas/sitemap/0.9'

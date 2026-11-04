@@ -3,10 +3,102 @@
   "provider_token": null,
   "status": "public_app_awaiting_first_asc_campaign_link",
   "campaigns": [
-    {"name": "v1_web_es", "landing": "index.html", "audience": "Spanish Apple users with their own playlists"},
-    {"name": "v1_web_en", "landing": "en.html", "audience": "English Apple users with their own playlists"},
-    {"name": "v1_app_share", "landing": "index.html", "audience": "Voluntary recommendations from the Apple app"},
-    {"name": "v1_guide_es", "landing": "start.html", "audience": "Spanish connection guide"},
-    {"name": "v1_guide_en", "landing": "start-en.html", "audience": "English connection guide"}
+    {
+      "name": "v1_web_es",
+      "landing": "index.html",
+      "audience": "Spanish Apple users with their own playlists"
+    },
+    {
+      "name": "v1_web_en",
+      "landing": "en.html",
+      "audience": "English Apple users with their own playlists"
+    },
+    {
+      "name": "v1_app_share",
+      "landing": "index.html",
+      "audience": "Voluntary recommendations from the Apple app"
+    },
+    {
+      "name": "v1_guide_es",
+      "landing": "start.html",
+      "audience": "Spanish connection guide"
+    },
+    {
+      "name": "v1_guide_en",
+      "landing": "start-en.html",
+      "audience": "English connection guide"
+    },
+    {
+      "name": "televizo_web_es",
+      "landing": "televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_es-419",
+      "landing": "es-419/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_en",
+      "landing": "televizo-ios-en.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_fr",
+      "landing": "fr/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_it",
+      "landing": "it/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_de",
+      "landing": "de/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_nl",
+      "landing": "nl/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_ar",
+      "landing": "ar/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_id",
+      "landing": "id/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_tr",
+      "landing": "tr/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_pt-br",
+      "landing": "pt-BR/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    },
+    {
+      "name": "televizo_web_pt-pt",
+      "landing": "pt-PT/televizo-ios.html",
+      "audience": "People looking for an independent Televizo alternative on Apple devices",
+      "attribution_status": "Pending a real App Analytics provider token; direct App Store links are not attributed install measurements."
+    }
   ]
 }

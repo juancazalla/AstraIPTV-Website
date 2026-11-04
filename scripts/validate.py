@@ -7,6 +7,7 @@ from pathlib import Path
 import subprocess
 import sys
 from urllib.parse import unquote, urlparse
+import xml.etree.ElementTree as ET
 import build
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -95,6 +96,18 @@ def check():
         raw=(ROOT/asset['output']).read_bytes()
         assert hashlib.sha256(raw).hexdigest()==asset['output_sha256'],asset['output']
         assert raw[:2]==b'\xff\xd8',asset['output']
-    print(f'Validated {len(pages)} pages, {references} references, 12 reciprocal language menus, 36 native screenshots and 12 social previews.')
+    guide_manifest=json.loads((ROOT/'assets/screens/guide-manifest.json').read_text())
+    assert {asset['locale'] for asset in guide_manifest['assets']}=={lc['code'] for lc in build.LOCALES}
+    assert len(guide_manifest['assets'])==len(build.LOCALES)
+    for asset in guide_manifest['assets']:
+        raw=(ROOT/asset['output']).read_bytes()
+        assert hashlib.sha256(raw).hexdigest()==asset['output_sha256'],asset['output']
+        assert raw[:4]==b'RIFF' and raw[8:12]==b'WEBP',asset['output']
+    sitemap=ET.parse(ROOT/'sitemap.xml')
+    listed=[node.text for node in sitemap.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
+    expected={build.public_url(lc['code'],kind) for lc in build.LOCALES for kind in build.PAGES}
+    expected.update(build.CONFIG['base_url']+build.android_route(code,kind) for code in ('es','en') for kind in ('privacy','support'))
+    assert set(listed)==expected and len(listed)==len(expected),'sitemap missing or duplicate page'
+    print(f'Validated {len(pages)} pages, {references} references, 12 reciprocal language menus, 36 original screenshots, 12 guide screenshots and 12 social previews.')
 
 if __name__=='__main__':check()

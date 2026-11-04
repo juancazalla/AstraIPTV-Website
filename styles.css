@@ -154,6 +154,18 @@ summary::-webkit-details-marker { display: none; }
 .document-body ol { padding-inline-start: 24px; }
 .document-links { font-size: 14px; overflow-wrap: anywhere; }
 .document-end { margin-block-start: 32px; }
+.comparison-header { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; margin-block-end: 64px; }
+.comparison-header .document-header { margin-block-end: 0; min-inline-size: 0; }
+.comparison-header h1 { font-size: clamp(2.4rem, 4vw, 3.6rem); }
+.comparison-header .document-lead { font-size: 18px; }
+.comparison-header .actions { justify-content: flex-start; }
+.comparison-header .updated { margin-block-start: 20px; }
+.comparison-notice, .comparison-preview figcaption { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.comparison-preview { min-inline-size: 0; }
+.comparison-preview figcaption { margin-block-start: 16px; }
+@media (max-width: 1000px) {
+  .comparison-header { grid-template-columns: 1fr; gap: 32px; }
+}
 
 :lang(ar) h1, :lang(ar) h2, :lang(ar) h3 { letter-spacing: 0; line-height: 1.45; }
 :lang(ar) .hero h1 { font-size: clamp(3rem, 6.5vw, 5.3rem); }
