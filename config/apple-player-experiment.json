@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
   "experimentVersion": 1,
-  "enabled": true,
+  "enabled": false,
   "aetherPercent": 50
 }

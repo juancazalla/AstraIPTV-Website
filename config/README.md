@@ -2,6 +2,8 @@
 
 `apple-player-experiment.json` is a public, non-sensitive feature flag consumed by future Astra Apple releases. It contains only rollout controls; never add credentials, installation identifiers, provider URLs or personal data here.
 
+As of 2026-11-04 the experiment is paused (`enabled=false`): VLC is the default until the updated app is released and the experiment is explicitly activated. The stored 50/50 split is inactive while the flag is disabled. Manual player choices remain effective.
+
 - `schemaVersion`: keep at 1 for this client schema.
 - `experimentVersion`: integer 1–10000. Increase it when intentionally starting a new allocation/analysis period.
 - `enabled`: false restores the ordinary VLC default on the next player opening after clients refresh. Manual player choices always win.
