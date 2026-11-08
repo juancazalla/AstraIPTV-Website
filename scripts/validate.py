@@ -35,6 +35,8 @@ def check_playback_policy():
     assert policy.get('defaultEngine') in ('astra', 'aether', None)
     assert set(policy['liveRewind']) == {'astra', 'aether'}
     assert all(type(value) is bool for value in policy['liveRewind'].values())
+    if 'experimentalVLCRewind' in policy:
+        assert type(policy['experimentalVLCRewind']) is bool
 
 
 def check():

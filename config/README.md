@@ -17,13 +17,21 @@ Publishing this file does not distribute an app build or change existing release
 
 `apple-playback-policy.json` is the operational policy for Apple app builds that include `PlaybackFeatureFlags` (after build 72). Older app builds do not consume this endpoint. These controls are independent of analytics consent and the allocation experiment above. They never contain customer/provider data and the app does not append identifiers to its request.
 
-The initial policy uses Aether as the default, disables VLC live rewind pending physical Apple TV stability validation, and keeps Aether live rewind enabled. Existing manual player choices remain effective. Disabling rewind prevents the VLC capture/manifest observer or Aether DVR from being enabled; it does not merely hide the timeline. Ordinary live playback and audio-track controls remain available.
+The policy uses Aether as the default, keeps legacy/automatic VLC rewind disabled, and keeps Aether live rewind enabled. Updated clients offer VLC rewind only as the explicit experiment described below. Existing manual player choices remain effective. Disabling the applicable availability controls prevents the VLC capture/manifest observer or Aether DVR from being enabled; it does not merely hide the timeline. For VLC on updated clients, both the legacy and experimental controls must be off to disable availability. Ordinary live playback and audio-track controls remain available.
 
 - `schemaVersion`: 1.
 - `revision`: integer 1–1000000. Increment for every change, including restoring a previous setting. Older revisions and changed contents with the same revision are ignored.
 - `defaultEngine`: `"astra"` (VLC), `"aether"`, or `null`. A non-null value supplies the default for users without a saved manual preference. `null` delegates to the separate consented allocation experiment; its inactive/offline fallback is the app's Aether baseline.
-- `liveRewind.astra`, `liveRewind.aether`: booleans enabling history independently for each engine, including users who selected that engine manually.
+- `liveRewind.astra`, `liveRewind.aether`: stable/legacy history availability for each engine. Updated VLC clients also consult the independent experimental control below; Aether keeps its saved preference.
 
 The app fetches asynchronously on launch/foreground and when playback controls are consulted, at most once every 15 minutes within a process. Playback never waits for the request. The last valid policy is retained offline and is not re-enabled by an arbitrary cache expiry. With no valid policy the safe defaults are Aether, VLC rewind off, Aether rewind on. An existing input keeps its captured controls; changes take effect when a subsequent input opens after refresh. Seeking within the same retained capture does not start a new policy lifetime. Test-only overrides require a Debug app launched with `--ui-testing`; they are absent from Release builds.
 
 To change a switch, edit the policy, increment `revision`, validate with `python3 scripts/validate.py`, commit and push `main`, then wait for GitHub Pages and verify the deployed JSON. This updates supported installed app builds without another binary upload. Do not change `apple-player-experiment.json` as a substitute for these operational controls: that legacy endpoint cannot disable rewind and is intentionally consent-gated.
+
+## Explicit VLC rewind experiment
+
+Revision2 adds `experimentalVLCRewind: true`. Updated clients offer a separately saved VLC rewind switch, marked experimental and OFF by default; Aether keeps its existing preference. Older clients (including73) ignore the new field and still read `liveRewind.astra: false`, so this policy does not automatically enable rewind on those clients. Do not turn that legacy field on to expose the experiment.
+
+A new client with an older cached policy lacking the optional field may offer the explicit experiment locally, but still requires the separate user opt-in. To disable the experiment remotely on updated clients, publish both `experimentalVLCRewind: false` and `liveRewind.astra: false` with an increased revision. Saved user choices remain stored for a later re-enable. Neither a shared Aether preference nor a remote availability change automatically opts a user into VLC rewind.
+
+On upgrading from a client that discarded unknown JSON keys, the new client can learn `experimentalVLCRewind` at the same revision only when every existing field matches its cache. Once the field is known, changing its value still requires a higher revision.
