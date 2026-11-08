@@ -26,7 +26,19 @@ class Page(HTMLParser):
         if tag=='h1':self.h1+=1
 
 
+def check_playback_policy():
+    data = (ROOT/'config/apple-playback-policy.json').read_bytes()
+    assert len(data) <= 4096, 'Playback policy exceeds the app response bound'
+    policy = json.loads(data)
+    assert type(policy['schemaVersion']) is int and policy['schemaVersion'] == 1
+    assert type(policy['revision']) is int and 1 <= policy['revision'] <= 1_000_000
+    assert policy.get('defaultEngine') in ('astra', 'aether', None)
+    assert set(policy['liveRewind']) == {'astra', 'aether'}
+    assert all(type(value) is bool for value in policy['liveRewind'].values())
+
+
 def check():
+    check_playback_policy()
     subprocess.run([sys.executable,str(ROOT/'scripts/build.py'),'--check'],check=True)
     build.load_content()
     pages={build.route(lc['code'],kind):Page((ROOT/build.route(lc['code'],kind)).read_text()) for lc in build.LOCALES for kind in build.PAGES}
