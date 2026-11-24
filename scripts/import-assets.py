@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Encode the verified fictional demo captures from Astra's App Store campaign."""
+"""Encode verified Astra simulator captures for the website."""
 import argparse
 import hashlib
 import json
@@ -24,6 +24,8 @@ def main():
     parser.add_argument('--app-root', type=Path, required=True)
     parser.add_argument('--native-root', type=Path, required=True, help='Capture directory relative to app-root')
     parser.add_argument('--capture-date', required=True, help='Capture date in YYYY-MM-DD format')
+    parser.add_argument('--home-capture-report', type=Path, required=True,
+                        help='Verified iPhone and Apple TV Home capture report relative to app-root')
     args = parser.parse_args()
     config = json.loads((ROOT / 'content/config.json').read_text())
     app_root = args.app_root.resolve()
@@ -32,22 +34,34 @@ def main():
     report = json.loads((app_root / evidence).read_text())
     if report['version'] != config['app_version']:
         parser.error('Campaign verification does not match the website version')
+    home_evidence = (app_root / args.home_capture_report).resolve().relative_to(app_root)
+    home_report = json.loads((app_root / home_evidence).read_text())
+    home_captures = {(item['locale'], item['device']): item for item in home_report['captures']}
+    expected_home = {(locale['code'], device) for locale in config['locales'] for device in ('iphone', 'tv')}
+    if set(home_captures) != expected_home or len(home_report['captures']) != len(expected_home):
+        parser.error('Home capture report must cover both devices in every website locale')
     verified = {}
     for record in report['nativeScenes']:
         _, locale, device, filename = Path(record['file']).parts
         scene = Path(filename).stem.split('-', 1)[1]
         verified[locale, device, scene] = record
 
-    # Wait until all input hashes match the reviewed campaign before writing any public asset.
+    # Verify every capture before writing any public asset.
     inputs = []
     for locale in config['locales']:
+        code = locale['code']
         for name, (device, scene, width) in SCENES.items():
-            native_locale = locale['screenshot']
-            record = verified[native_locale, device, scene]
-            source = native_root / native_locale / device / f'{scene}.jpg'
-            if sha256(app_root / source) != record['nativeSHA256']:
-                parser.error(f'Capture does not match campaign verification: {source}')
-            inputs.append((locale['code'], name, width, source, record['nativeSHA256']))
+            if name in ('iphone', 'tv'):
+                capture = home_captures[code, name]
+                source = home_evidence.parent / capture['source']
+                source_hash = capture['source_sha256']
+            else:
+                native_locale = locale['screenshot']
+                source = native_root / native_locale / device / f'{scene}.jpg'
+                source_hash = verified[native_locale, device, scene]['nativeSHA256']
+            if sha256(app_root / source) != source_hash:
+                parser.error(f'Capture does not match verification: {source}')
+            inputs.append((code, name, width, source, source_hash))
 
     assets, social_assets = [], []
     for code, name, width, source, source_hash in inputs:
@@ -68,7 +82,13 @@ def main():
         'source_commit': report['source'],
         'source_evidence': str(evidence),
         'capture_date': args.capture_date,
-        'content': 'Native simulator captures of the fictional Astra demo catalogue. Proportional resize and encoding only.',
+        'website_home_capture': {
+            'app_version': home_report['app_version'],
+            'capture_date': home_report['capture_date'],
+            'source_evidence': str(home_evidence),
+            'source_commits': home_report['source_commits'],
+        },
+        'content': 'Native Home captures with TMDB artwork, alongside the original Multiview and guide demo captures. Proportional resize and encoding only.',
         'assets': assets,
         'social_assets': social_assets,
     }

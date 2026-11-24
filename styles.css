@@ -78,7 +78,9 @@ summary::-webkit-details-marker { display: none; }
 .hero-visual::before { content: ""; position: absolute; inset: -20px 12% 20%; background: #a391ff; opacity: .11; filter: blur(65px); z-index: -1; }
 .tv-frame { background: #101116; border: 1px solid #3b3b45; padding: 7px; border-radius: 18px; box-shadow: var(--shadow); }
 .tv-frame img { border-radius: 11px; inline-size: 100%; }
-.hero-visual figcaption { max-inline-size: 450px; font-size: 10px; line-height: 1.6; color: var(--muted); margin-block-start: 20px; }
+.hero-visual figcaption { max-inline-size: 450px; font-size: .8125rem; line-height: 1.6; color: var(--muted); margin-block-start: 20px; }
+.screenshot-credit { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; margin-block-start: 8px; font-size: .75rem; }
+.screenshot-credit img { inline-size: 70px; }
 .experience { padding-block: 50px 70px; border-block-start: 1px solid var(--line); }
 .experience-heading { margin-block-end: 42px; }
 .experience-heading h2 { max-inline-size: 620px; margin-block-end: 0; }
@@ -212,7 +214,7 @@ summary::-webkit-details-marker { display: none; }
   .facts { gap: 6px 14px; font-size: 10px; }
   .tv-frame { padding: 4px; border-radius: 10px; }
   .tv-frame img { border-radius: 6px; }
-  .hero-visual figcaption { margin-block-start: 14px; font-size: 9px; }
+  .hero-visual figcaption { margin-block-start: 14px; }
   .experience { padding-block: 36px 30px; }
   .experience-heading { margin-block-end: 28px; }
   .section-heading { margin-block-end: 32px; }

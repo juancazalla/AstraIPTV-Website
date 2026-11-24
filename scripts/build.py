@@ -129,7 +129,11 @@ def home(data, prefix, urls, code):
           <div class="hero-phone phone-frame"><img src="{screen('iphone')}" width="880" height="1912" alt="{t('phone_alt')}"></div>
           <span class="stage-label" aria-hidden="true">Astra <span>✦</span> <bdi>Apple TV + iPhone</bdi></span>
         </div>
-        <figcaption>{t('demo_caption')}</figcaption>
+        <figcaption>{t('demo_caption')}
+          <span class="screenshot-credit" lang="en"><a href="https://www.themoviedb.org/"><img src="{prefix}assets/tmdb.svg" width="70" height="9" alt="TMDB"></a>
+            <span>This product uses the TMDB API but is not endorsed or certified by TMDB.</span>
+          </span>
+        </figcaption>
       </figure>
       </div>
     </section>

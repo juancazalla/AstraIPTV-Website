@@ -43,14 +43,15 @@ GitHub Pages publishes the root of `main` after each push. This public repositor
 
 ## Real app assets
 
-`assets/screens/<locale>/` contains actual localized simulator screenshots of iPhone, iPad and Apple TV using Astra’s fictional demo catalogue. The home pages use the 1.1.0 campaign captured on 18 November 2026. The Televizo alternative pages use the Apple TV guide from the same campaign. The captures were resized proportionally and encoded for the web. WebP is used for page images and JPEG for social previews. All website images are served locally.
+`assets/screens/<locale>/` contains actual localized simulator screenshots of iPhone, iPad and Apple TV. The iPhone and Apple TV Home captures use Astra 1.1.1 and an example library. Astra requests the synopsis, backdrop, poster and title logo from TMDB. The Continue Watching row shows different titles with example playback progress. The Apple TV Home captures show the primary playback button focused. iPad Multiview and the Apple TV programme guide use the 1.1.0 demo campaign from 18 November 2026. WebP is used for page images and JPEG for social previews.
 
-`assets/screens/manifest.json` records the capture date, app source commit, original paths and input and output hashes. The importer verifies each native capture against the App Store campaign report before encoding any images. It reads the published website version from `content/config.json`.
+`assets/screens/manifest.json` records capture dates, app source commits, original paths and input and output hashes. The importer verifies each image against the corresponding capture report before encoding. The version in `content/config.json` follows the public App Store release.
 
 To reproduce this capture set, retain the native campaign files in the private app checkout and use `cwebp` and macOS `sips`.
 
 ```sh
-python3 scripts/import-assets.py --app-root ../AstraIPTV --native-root output/store-110/raw --capture-date 2026-11-18
+python3 scripts/import-assets.py --app-root ../AstraIPTV --native-root output/store-110/raw \
+  --capture-date 2026-11-18 --home-capture-report output/website-tmdb-2026-11-24/report.json
 python3 scripts/build.py
 python3 scripts/validate.py
 ```

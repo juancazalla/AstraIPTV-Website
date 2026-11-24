@@ -3,16 +3,25 @@
   "source_commit": "d68023c177a2b01099d3abcda21eda1c7ba216c8",
   "source_evidence": "release/app-store/campaign-1.1.0/verification/campaign.json",
   "capture_date": "2026-11-18",
-  "content": "Native simulator captures of the fictional Astra demo catalogue. Proportional resize and encoding only.",
+  "website_home_capture": {
+    "app_version": "1.1.1",
+    "capture_date": "2026-11-24",
+    "source_evidence": "output/website-tmdb-2026-11-24/report.json",
+    "source_commits": {
+      "iphone": "58abc758563ed337014efc39a7b09013ebcf0d84",
+      "tv": "6663b6c5cf726138a31c5e41f28dbad6563abc93"
+    }
+  },
+  "content": "Native Home captures with TMDB artwork, alongside the original Multiview and guide demo captures. Proportional resize and encoding only.",
   "assets": [
     {
       "locale": "es",
       "device": "iphone",
-      "source": "output/store-110/raw/es-ES/iphone/home.jpg",
-      "source_sha256": "cff188991d4b7d7859afa477aebfd6cba571cb4f7041a6e911caf85bc2b7ff49",
+      "source": "output/website-tmdb-2026-11-24/raw/es/iphone/home.png",
+      "source_sha256": "ccf4270907dfacff86dd43ba91fec3b4e2408b59e39e1d10109d8c3ea6c1045c",
       "output": "assets/screens/es/iphone.webp",
-      "output_sha256": "3b767c171ea6fe641f9828cad43f2f26b43b7ff9e830e285788f19ff37bceb8e",
-      "bytes": 158512
+      "output_sha256": "3d2e8be8193f34ce8ed0bf38c1781d1afd6ed811152d67275444096532f56a1e",
+      "bytes": 213234
     },
     {
       "locale": "es",
@@ -26,11 +35,11 @@
     {
       "locale": "es",
       "device": "tv",
-      "source": "output/store-110/raw/es-ES/tv/home.jpg",
-      "source_sha256": "0ad81c4b7f2aae6ce45fde77afe174014476e92d4e3bddca3bf79eff33853f5c",
+      "source": "output/website-tmdb-2026-11-24/raw/es/tv/home.png",
+      "source_sha256": "33f9afc53223b686e42fa0a18a145675de3a1d057b0b34f12e16af567c764e74",
       "output": "assets/screens/es/tv.webp",
-      "output_sha256": "a431a849771d62761c50d54e1612a24e62eeddac733f6ea632647b0113be73fe",
-      "bytes": 235254
+      "output_sha256": "94540892fb41bd99268da6d897b78a2812bf7ecb8f2a830a7f301a96f2448a43",
+      "bytes": 96948
     },
     {
       "locale": "es",
@@ -44,11 +53,11 @@
     {
       "locale": "es-419",
       "device": "iphone",
-      "source": "output/store-110/raw/es-MX/iphone/home.jpg",
-      "source_sha256": "f1394286c20130f41d1f71dded9b524b8bd49f0b931e2be70fdd542903d117ad",
+      "source": "output/website-tmdb-2026-11-24/raw/es-419/iphone/home.png",
+      "source_sha256": "a238c1cb99f6143136b0666104be71539d60e331a49c60a2df2198e435c87373",
       "output": "assets/screens/es-419/iphone.webp",
-      "output_sha256": "ab2e791f7d0167396c907d9aa8ffd099d85277984cb85817687f654791e97d5a",
-      "bytes": 169190
+      "output_sha256": "f49bcf905229c1a569ebfb392c119529426012b2ad78e2f66f716c14c3819057",
+      "bytes": 213428
     },
     {
       "locale": "es-419",
@@ -62,11 +71,11 @@
     {
       "locale": "es-419",
       "device": "tv",
-      "source": "output/store-110/raw/es-MX/tv/home.jpg",
-      "source_sha256": "292599a31a7ffcf09d15f6acaf455d45c5f5a9aadb73b0499511fad99fd0c6fe",
+      "source": "output/website-tmdb-2026-11-24/raw/es-419/tv/home.png",
+      "source_sha256": "cf84e347ccb49a69848acde756b716180290abb2a4f5a6a6c7aa84bb8dc1f3de",
       "output": "assets/screens/es-419/tv.webp",
-      "output_sha256": "db52df6d5c5c43336ce89b895bda5926e73648f1947fa2e681835c089ee8fab3",
-      "bytes": 191228
+      "output_sha256": "ad5f5e25899da3d98fc131e9d6955d658610834f3c751516d3ec6e727c02c70f",
+      "bytes": 96888
     },
     {
       "locale": "es-419",
@@ -80,11 +89,11 @@
     {
       "locale": "en",
       "device": "iphone",
-      "source": "output/store-110/raw/en-US/iphone/home.jpg",
-      "source_sha256": "88901a1999e12ff1043237013513033e09c0d0e5310f31767d554535cde84d48",
+      "source": "output/website-tmdb-2026-11-24/raw/en/iphone/home.png",
+      "source_sha256": "f632e3968ebbb75cec7ba3ee728853eaa15661c304677b24286b9f868c9aaaac",
       "output": "assets/screens/en/iphone.webp",
-      "output_sha256": "4d5f1464ba41ad303ee2ae4b393092dc29e5c99ca8c1c5319d20902862bd42e2",
-      "bytes": 165074
+      "output_sha256": "fe2f99786ac00ab7026fc2f1edfbda7fdafa3768b09f22c846b75596b353af34",
+      "bytes": 204282
     },
     {
       "locale": "en",
@@ -98,11 +107,11 @@
     {
       "locale": "en",
       "device": "tv",
-      "source": "output/store-110/raw/en-US/tv/home.jpg",
-      "source_sha256": "f7b75099fc90d200881f1f2227ed15225f95cdb0155c406b794318df19c91479",
+      "source": "output/website-tmdb-2026-11-24/raw/en/tv/home.png",
+      "source_sha256": "dfd8d338931c5fe392fd1261713a678ea65f18b78f60c7d2cd438d39eda76691",
       "output": "assets/screens/en/tv.webp",
-      "output_sha256": "2f0367d77d6eb76389ac79c9bcfaa603bf1ee724c8534dd79c94d56958b2bec7",
-      "bytes": 212100
+      "output_sha256": "5c9301befc7ead05f2e6f306e586850cccec3d2711fbb85aa486da35680369db",
+      "bytes": 95996
     },
     {
       "locale": "en",
@@ -116,11 +125,11 @@
     {
       "locale": "fr",
       "device": "iphone",
-      "source": "output/store-110/raw/fr-FR/iphone/home.jpg",
-      "source_sha256": "9326579c989c864b2a68f4a90cf8c098fc63b50a23ff3236f7cc8dfffe00127e",
+      "source": "output/website-tmdb-2026-11-24/raw/fr/iphone/home.png",
+      "source_sha256": "8a0c091b2c6e5304e36ea149ceb601894a3e51aa072a359521e3974ad52660b1",
       "output": "assets/screens/fr/iphone.webp",
-      "output_sha256": "9f7d36f162f727ce076c82e2940053b829708531fbea9107fbee0b876314a8d6",
-      "bytes": 164612
+      "output_sha256": "94ac6347b8b2deb86aacdee3a818559ae5dd942e8061e022d64ee8b1f8fe8b67",
+      "bytes": 212586
     },
     {
       "locale": "fr",
@@ -134,11 +143,11 @@
     {
       "locale": "fr",
       "device": "tv",
-      "source": "output/store-110/raw/fr-FR/tv/home.jpg",
-      "source_sha256": "02f0589141f6387610ddcaf1ef5b242ca5607be862ed6ef7b877f8b4de46adab",
+      "source": "output/website-tmdb-2026-11-24/raw/fr/tv/home.png",
+      "source_sha256": "847f83cf0c62514ed122e065b480cdc87917ce31e3423ff0fde008fb44bc9627",
       "output": "assets/screens/fr/tv.webp",
-      "output_sha256": "77aa790b95b6d716cbadc1b9b0a7ca76d36032bd111a5680d4301316100a6600",
-      "bytes": 199956
+      "output_sha256": "a65a2e63910ca85fb40214cadc32ed0659a5d775b63b29a2b0c3b62db8a77424",
+      "bytes": 100188
     },
     {
       "locale": "fr",
@@ -152,11 +161,11 @@
     {
       "locale": "it",
       "device": "iphone",
-      "source": "output/store-110/raw/it/iphone/home.jpg",
-      "source_sha256": "e54d21d5a4b2967de9ec9ddd269948d0079d240e6842c181c93fb2609419b703",
+      "source": "output/website-tmdb-2026-11-24/raw/it/iphone/home.png",
+      "source_sha256": "df082e176b78e8670d804b9bed249279ebb7e823d669d893a71ec9e1aa2f9307",
       "output": "assets/screens/it/iphone.webp",
-      "output_sha256": "3c16432d0c5e62536106880150bcf3eaf98d1ce0aa230d92871fb013b9b7d5b2",
-      "bytes": 171202
+      "output_sha256": "b132665bf169edf2025feb1920e4b439806d0293099ca7c9a35c6d7f41f51fd3",
+      "bytes": 211074
     },
     {
       "locale": "it",
@@ -170,11 +179,11 @@
     {
       "locale": "it",
       "device": "tv",
-      "source": "output/store-110/raw/it/tv/home.jpg",
-      "source_sha256": "94d27aba98e6b656f8caa3292997f04441bb10924b9e71f852e644bf86db8732",
+      "source": "output/website-tmdb-2026-11-24/raw/it/tv/home.png",
+      "source_sha256": "4693e8baf86001f9034037bd6c8499d80a40214b3073f89afeffe5a601f21d8c",
       "output": "assets/screens/it/tv.webp",
-      "output_sha256": "7ce3694277bd993c43f2af5ab42e7ad155e25cdd597d33e528aea72f0038363c",
-      "bytes": 206242
+      "output_sha256": "3087cdacdeaf8267621cc9f6a70c0b1746447b09def4b81c5af84624adb5cde1",
+      "bytes": 89272
     },
     {
       "locale": "it",
@@ -188,11 +197,11 @@
     {
       "locale": "de",
       "device": "iphone",
-      "source": "output/store-110/raw/de-DE/iphone/home.jpg",
-      "source_sha256": "cfce74124d64e0390559f18ef55319c0283397404f2cc52da39dbe0bbc973c70",
+      "source": "output/website-tmdb-2026-11-24/raw/de/iphone/home.png",
+      "source_sha256": "3e05f12af50597ba5f076283935ba33bab492708c5b3db5500a547359198132d",
       "output": "assets/screens/de/iphone.webp",
-      "output_sha256": "d99b18b2d9ff49c3eab50a252a24b74ecd8903a241ef63f90c58a5516d1e0e39",
-      "bytes": 138432
+      "output_sha256": "b6367f86b1a81d7def8b49341de8ac3faae4f81a24fdf5cd73f31ad9e5039494",
+      "bytes": 210562
     },
     {
       "locale": "de",
@@ -206,11 +215,11 @@
     {
       "locale": "de",
       "device": "tv",
-      "source": "output/store-110/raw/de-DE/tv/home.jpg",
-      "source_sha256": "a9422c5abea34c3f425575d4c90d55c4c2910839e283aa1bdd7e2f306ba4d4af",
+      "source": "output/website-tmdb-2026-11-24/raw/de/tv/home.png",
+      "source_sha256": "c3024fca7b78942bf9e01af531b0318ce3aed26f6eebf36f9d2856b6fc5d3acb",
       "output": "assets/screens/de/tv.webp",
-      "output_sha256": "508526872cb5ed706cdee540c042c534d46fb9cebaba5fc1073c7349dfa897bb",
-      "bytes": 181328
+      "output_sha256": "9ec9211b0cb7a84e8a760ef700f282f49d33a39358517dc21e67879939508722",
+      "bytes": 88690
     },
     {
       "locale": "de",
@@ -224,11 +233,11 @@
     {
       "locale": "nl",
       "device": "iphone",
-      "source": "output/store-110/raw/nl-NL/iphone/home.jpg",
-      "source_sha256": "8736bb43d18803a954bf4ffc7fd75948514f30ff02383d4ae66f583e366c00d5",
+      "source": "output/website-tmdb-2026-11-24/raw/nl/iphone/home.png",
+      "source_sha256": "36e8ae340b6defa2fedcc4d9cbb05d5375048d6d3e1c394ffc826c4d839aef96",
       "output": "assets/screens/nl/iphone.webp",
-      "output_sha256": "6105a86807e50291bd901e9943c44244c80bd5de660b1509af1dd6d04ed242b3",
-      "bytes": 164614
+      "output_sha256": "748d8760613e28d1fb0770c1605d5160f5f247e9b15f6c73e1a2129021c264fc",
+      "bytes": 208262
     },
     {
       "locale": "nl",
@@ -242,11 +251,11 @@
     {
       "locale": "nl",
       "device": "tv",
-      "source": "output/store-110/raw/nl-NL/tv/home.jpg",
-      "source_sha256": "1a2e2ebf3cc532432dca6e3e56d80c49da0b043d3b967778ef087d748cb68126",
+      "source": "output/website-tmdb-2026-11-24/raw/nl/tv/home.png",
+      "source_sha256": "f0250d14d4f3beb4b41aaf62f3fe0b3d7aeb022eb1e6c9e8d37194ef98ecea5d",
       "output": "assets/screens/nl/tv.webp",
-      "output_sha256": "a784c76f423157f96100b3d9965efcab000526c23a95ff7ac694b4c947ea8088",
-      "bytes": 213702
+      "output_sha256": "191429728725c470291d3e8fdc4161537a08910878254599b32a0516fce5043f",
+      "bytes": 94728
     },
     {
       "locale": "nl",
@@ -260,11 +269,11 @@
     {
       "locale": "ar",
       "device": "iphone",
-      "source": "output/store-110/raw/ar-SA/iphone/home.jpg",
-      "source_sha256": "14d158c21457768da413f20d6f0ada5fe0f5f029b23700c4387889093f7f502c",
+      "source": "output/website-tmdb-2026-11-24/raw/ar/iphone/home.png",
+      "source_sha256": "8d9ba5a34ce192cb49d7ab99cb0d13f3c77c8db93efbbf3a18066f7eaeb63562",
       "output": "assets/screens/ar/iphone.webp",
-      "output_sha256": "a5ea57cc460e3f01fd105f9fe78a2ce8d9d4708459a5e8aec7094274b5582226",
-      "bytes": 140452
+      "output_sha256": "e1691fb5e7e92a7294701923827a5cbcb22136e9dddb2a6171401eb8a152e74d",
+      "bytes": 210900
     },
     {
       "locale": "ar",
@@ -278,11 +287,11 @@
     {
       "locale": "ar",
       "device": "tv",
-      "source": "output/store-110/raw/ar-SA/tv/home.jpg",
-      "source_sha256": "99fa794060c4b9eb942bdd2935a94195b91dd68e13fee4d3a4e589af297ee047",
+      "source": "output/website-tmdb-2026-11-24/raw/ar/tv/home.png",
+      "source_sha256": "d41fc671e7a3bd1be80e12cd3575456bc67e199b62ddfa12e617a01539810664",
       "output": "assets/screens/ar/tv.webp",
-      "output_sha256": "bc890fdbd8f5dcdf3b0a1f4b0a8a761070f397448ca6b95619dab8e73018c667",
-      "bytes": 213728
+      "output_sha256": "27a27eba87a49bbdd119718d5c179fb7baaa98e2b2ba1aeb9dc8fee7d2afa3f4",
+      "bytes": 90922
     },
     {
       "locale": "ar",
@@ -296,11 +305,11 @@
     {
       "locale": "id",
       "device": "iphone",
-      "source": "output/store-110/raw/id/iphone/home.jpg",
-      "source_sha256": "df97783cbe4bccfb6ad2b13a6704c195baf03075b453739cc7d50d1b5aace643",
+      "source": "output/website-tmdb-2026-11-24/raw/id/iphone/home.png",
+      "source_sha256": "171b19ed069c8b1e39cc8a3ceb1ee1220c00aeef33db43e2d47ca1cd93800e7d",
       "output": "assets/screens/id/iphone.webp",
-      "output_sha256": "e5c965e0001321cf8e1892db85bcba6d5de63cb032b429872f271cb94bc05569",
-      "bytes": 169894
+      "output_sha256": "4990fd9183b1525458aeb72d63f699d1fc50ecc88c5f38db70312bd08d6bdb91",
+      "bytes": 210042
     },
     {
       "locale": "id",
@@ -314,11 +323,11 @@
     {
       "locale": "id",
       "device": "tv",
-      "source": "output/store-110/raw/id/tv/home.jpg",
-      "source_sha256": "76435c7d9684e4d86d70cdddb10a9c318143cb3d9ab85dace35dcd20b8d49c6e",
+      "source": "output/website-tmdb-2026-11-24/raw/id/tv/home.png",
+      "source_sha256": "134819c8a60c2bd74c25348b7ae7c11d9d5f2373ade462856c961ad3721d7808",
       "output": "assets/screens/id/tv.webp",
-      "output_sha256": "7714b0813fe9f086bf136ea5208c3688e6362e82d42fa0985a3f14fb8650bfeb",
-      "bytes": 232514
+      "output_sha256": "cd993ac4cb08f89617a94723a411368bb0cf546ed4be51e3543855cb08cbc0e1",
+      "bytes": 91898
     },
     {
       "locale": "id",
@@ -332,11 +341,11 @@
     {
       "locale": "tr",
       "device": "iphone",
-      "source": "output/store-110/raw/tr/iphone/home.jpg",
-      "source_sha256": "868728e12fa7c29e7d3b5d256c739dce6c8fb417f64c11c55468fb81c6a6e456",
+      "source": "output/website-tmdb-2026-11-24/raw/tr/iphone/home.png",
+      "source_sha256": "ca505c985f510fdcdce53a018d61da571733d3035042a194a29f875cbdfccecb",
       "output": "assets/screens/tr/iphone.webp",
-      "output_sha256": "db8a25e6e63278808c183b2c1b091848eb8678e437d0cc6defcb3ff399d17933",
-      "bytes": 153312
+      "output_sha256": "7a7babb3b1719779b94b465eab7e58017506def4b1048681f0eec8111e44b5ba",
+      "bytes": 213470
     },
     {
       "locale": "tr",
@@ -350,11 +359,11 @@
     {
       "locale": "tr",
       "device": "tv",
-      "source": "output/store-110/raw/tr/tv/home.jpg",
-      "source_sha256": "efc735f69d78286afa5cde48327053e881250ec1e18d8fe0a3cc06dbf486ec17",
+      "source": "output/website-tmdb-2026-11-24/raw/tr/tv/home.png",
+      "source_sha256": "eb54a825b4608c11f4638eef7af14038e4d5926da7ab05acda6b66c3a7f14e6f",
       "output": "assets/screens/tr/tv.webp",
-      "output_sha256": "9c009759d5950154d0526ed9d49c21733840c4e8b580eab75a71c72132cc3312",
-      "bytes": 189030
+      "output_sha256": "ce72790975914187b8fb991285e2ddcd97761035b1e0ab22e753a20c1019c3ce",
+      "bytes": 95782
     },
     {
       "locale": "tr",
@@ -368,11 +377,11 @@
     {
       "locale": "pt-BR",
       "device": "iphone",
-      "source": "output/store-110/raw/pt-BR/iphone/home.jpg",
-      "source_sha256": "6d5f1aaef24cd403136300263fadc18b235488a0fc15e75127f49ae70991b29c",
+      "source": "output/website-tmdb-2026-11-24/raw/pt-BR/iphone/home.png",
+      "source_sha256": "58b8cd5284da67dc4a4fe9143a04ab2f7697a6e42c81840667b2e0d30862f76e",
       "output": "assets/screens/pt-BR/iphone.webp",
-      "output_sha256": "5f87e063d11c67400567e2fba983def02f24e84c836c97460655b0fe811e299a",
-      "bytes": 176232
+      "output_sha256": "fdff61369818be9d4a392ed552dc624ef5590e970ed1dac0965a99692f79434c",
+      "bytes": 213248
     },
     {
       "locale": "pt-BR",
@@ -386,11 +395,11 @@
     {
       "locale": "pt-BR",
       "device": "tv",
-      "source": "output/store-110/raw/pt-BR/tv/home.jpg",
-      "source_sha256": "3e4600c148d039d2a56acc0474e3ba158f10da45ab725965fa81ccb2e355a5e6",
+      "source": "output/website-tmdb-2026-11-24/raw/pt-BR/tv/home.png",
+      "source_sha256": "a740e2c5fe3d0cae1ae3e00d1ea1f6ec634dbb60ae644402d5d1c23ea7f2d910",
       "output": "assets/screens/pt-BR/tv.webp",
-      "output_sha256": "ccf032236f8e6941706ca25f46a83199f931fd223bd17f4cacc7793afb94f67b",
-      "bytes": 234710
+      "output_sha256": "4eee74dd224f78ec859f60cd7b8f5ba825775488dad30ac5710d692e5b9450b4",
+      "bytes": 98530
     },
     {
       "locale": "pt-BR",
@@ -404,11 +413,11 @@
     {
       "locale": "pt-PT",
       "device": "iphone",
-      "source": "output/store-110/raw/pt-PT/iphone/home.jpg",
-      "source_sha256": "848ea51e0cb9680a05557d53d78b6102ea63712ec7f7b55c9c543f4d693d16d4",
+      "source": "output/website-tmdb-2026-11-24/raw/pt-PT/iphone/home.png",
+      "source_sha256": "c566534b083c3966f2713fc6c42d2fd7630b734795d5109aead4179c10a1ac48",
       "output": "assets/screens/pt-PT/iphone.webp",
-      "output_sha256": "e5473c7d45a6d890776d2c7e0ba4a1c938a26c4a379c425c7af5ea79fb594ef9",
-      "bytes": 185326
+      "output_sha256": "4020df654f18ff33b068ccd505bd7c8911f056ab6d711aa35e23ea4d0b743067",
+      "bytes": 207940
     },
     {
       "locale": "pt-PT",
@@ -422,11 +431,11 @@
     {
       "locale": "pt-PT",
       "device": "tv",
-      "source": "output/store-110/raw/pt-PT/tv/home.jpg",
-      "source_sha256": "82db4611a0410c017e137927d76b4fc1f34d7c353d4f56b8dfab2df729b1ac96",
+      "source": "output/website-tmdb-2026-11-24/raw/pt-PT/tv/home.png",
+      "source_sha256": "e3dbac44e6f2bb987860f95efc908a88e0b24933d2f93268d04480b585c7ea68",
       "output": "assets/screens/pt-PT/tv.webp",
-      "output_sha256": "bebbfa619aae9e415dab9893cec73bca96f7af5ae3d3b2db166f4c17b383f455",
-      "bytes": 244816
+      "output_sha256": "afe5ec4640616908e37578b1b76101f4793fa0e29cd5b4b3942644d06050abb9",
+      "bytes": 96492
     },
     {
       "locale": "pt-PT",
@@ -442,98 +451,98 @@
     {
       "locale": "es",
       "device": "tv",
-      "source": "output/store-110/raw/es-ES/tv/home.jpg",
-      "source_sha256": "0ad81c4b7f2aae6ce45fde77afe174014476e92d4e3bddca3bf79eff33853f5c",
+      "source": "output/website-tmdb-2026-11-24/raw/es/tv/home.png",
+      "source_sha256": "33f9afc53223b686e42fa0a18a145675de3a1d057b0b34f12e16af567c764e74",
       "output": "assets/screens/es/tv.jpg",
-      "output_sha256": "7b68434ad6d4a4a774f9452a145a115a36adc6742011317ee1bbd509f1d2ee5c"
+      "output_sha256": "f355d44dd2dee28fc8da8af75c226724af3f3310f15251f27e33e2fa86b78d17"
     },
     {
       "locale": "es-419",
       "device": "tv",
-      "source": "output/store-110/raw/es-MX/tv/home.jpg",
-      "source_sha256": "292599a31a7ffcf09d15f6acaf455d45c5f5a9aadb73b0499511fad99fd0c6fe",
+      "source": "output/website-tmdb-2026-11-24/raw/es-419/tv/home.png",
+      "source_sha256": "cf84e347ccb49a69848acde756b716180290abb2a4f5a6a6c7aa84bb8dc1f3de",
       "output": "assets/screens/es-419/tv.jpg",
-      "output_sha256": "6b5f5fa1c7ccbb0de50ea2f1eaec86e435c6a24983ecfe954556fbef980b0742"
+      "output_sha256": "33a97995d8c262b7b575eca2923f6cb0593329c29abe4885ae199050b89356b1"
     },
     {
       "locale": "en",
       "device": "tv",
-      "source": "output/store-110/raw/en-US/tv/home.jpg",
-      "source_sha256": "f7b75099fc90d200881f1f2227ed15225f95cdb0155c406b794318df19c91479",
+      "source": "output/website-tmdb-2026-11-24/raw/en/tv/home.png",
+      "source_sha256": "dfd8d338931c5fe392fd1261713a678ea65f18b78f60c7d2cd438d39eda76691",
       "output": "assets/screens/en/tv.jpg",
-      "output_sha256": "c5ee32bc493a4e9fc4337d93b0682c08eb78d84a55dd5b5a01d7584ad90cc455"
+      "output_sha256": "72a8526cd10701fc8225bf2d479c81f7ae685d62a1ddda1fae249e6a5a06a98c"
     },
     {
       "locale": "fr",
       "device": "tv",
-      "source": "output/store-110/raw/fr-FR/tv/home.jpg",
-      "source_sha256": "02f0589141f6387610ddcaf1ef5b242ca5607be862ed6ef7b877f8b4de46adab",
+      "source": "output/website-tmdb-2026-11-24/raw/fr/tv/home.png",
+      "source_sha256": "847f83cf0c62514ed122e065b480cdc87917ce31e3423ff0fde008fb44bc9627",
       "output": "assets/screens/fr/tv.jpg",
-      "output_sha256": "c01a7523b19f74fb954ea1e2b50c2e1061c5706f955cf8fffd72bcbaeba7af2b"
+      "output_sha256": "aba488bc7412f8351791f8a1b76b729dace4de9a19c90a6866c96d22feb85563"
     },
     {
       "locale": "it",
       "device": "tv",
-      "source": "output/store-110/raw/it/tv/home.jpg",
-      "source_sha256": "94d27aba98e6b656f8caa3292997f04441bb10924b9e71f852e644bf86db8732",
+      "source": "output/website-tmdb-2026-11-24/raw/it/tv/home.png",
+      "source_sha256": "4693e8baf86001f9034037bd6c8499d80a40214b3073f89afeffe5a601f21d8c",
       "output": "assets/screens/it/tv.jpg",
-      "output_sha256": "8e683143f1ef1ceab8f7bdbf22cc6ac3e3ff2be839348808ab6db4c2fded7377"
+      "output_sha256": "3faca828b8b0ec7e1edf6c036ee840327cf5c9451c2e69fc73b862e183eb57dc"
     },
     {
       "locale": "de",
       "device": "tv",
-      "source": "output/store-110/raw/de-DE/tv/home.jpg",
-      "source_sha256": "a9422c5abea34c3f425575d4c90d55c4c2910839e283aa1bdd7e2f306ba4d4af",
+      "source": "output/website-tmdb-2026-11-24/raw/de/tv/home.png",
+      "source_sha256": "c3024fca7b78942bf9e01af531b0318ce3aed26f6eebf36f9d2856b6fc5d3acb",
       "output": "assets/screens/de/tv.jpg",
-      "output_sha256": "44e23d465fe39fee42eac6e4cfbbd566332cb950d44b910ef4d9e7cc1db1cdc2"
+      "output_sha256": "9ada7d0a61d73405f8e9b8493c728896fd99e4b8e4433f271989e1aa02889929"
     },
     {
       "locale": "nl",
       "device": "tv",
-      "source": "output/store-110/raw/nl-NL/tv/home.jpg",
-      "source_sha256": "1a2e2ebf3cc532432dca6e3e56d80c49da0b043d3b967778ef087d748cb68126",
+      "source": "output/website-tmdb-2026-11-24/raw/nl/tv/home.png",
+      "source_sha256": "f0250d14d4f3beb4b41aaf62f3fe0b3d7aeb022eb1e6c9e8d37194ef98ecea5d",
       "output": "assets/screens/nl/tv.jpg",
-      "output_sha256": "88bf34565f8ad87743baa36082db3ab73838f1cee95a76c6a39f7dc4fbc4c2a0"
+      "output_sha256": "e88c28043bd4ad6aaf311206c36f2c9e542df7cf1d1c0fa84ea2531f2da8d19b"
     },
     {
       "locale": "ar",
       "device": "tv",
-      "source": "output/store-110/raw/ar-SA/tv/home.jpg",
-      "source_sha256": "99fa794060c4b9eb942bdd2935a94195b91dd68e13fee4d3a4e589af297ee047",
+      "source": "output/website-tmdb-2026-11-24/raw/ar/tv/home.png",
+      "source_sha256": "d41fc671e7a3bd1be80e12cd3575456bc67e199b62ddfa12e617a01539810664",
       "output": "assets/screens/ar/tv.jpg",
-      "output_sha256": "8a2d5c5f90b4113a5e2ba90b0ff91bd500956709d1ee0e189978ab813ed1c869"
+      "output_sha256": "495211f07970a82db680c98576c3a085606439bd2b22ad425317bcf863d2ecae"
     },
     {
       "locale": "id",
       "device": "tv",
-      "source": "output/store-110/raw/id/tv/home.jpg",
-      "source_sha256": "76435c7d9684e4d86d70cdddb10a9c318143cb3d9ab85dace35dcd20b8d49c6e",
+      "source": "output/website-tmdb-2026-11-24/raw/id/tv/home.png",
+      "source_sha256": "134819c8a60c2bd74c25348b7ae7c11d9d5f2373ade462856c961ad3721d7808",
       "output": "assets/screens/id/tv.jpg",
-      "output_sha256": "137646bbe3e664bc0df66959420220dbf5cc829dc559e2ddd1d6b150055b08b6"
+      "output_sha256": "06ed7ef83045da39c15022488076d9b389b9dd3f6fb35a262228944fc4858a3b"
     },
     {
       "locale": "tr",
       "device": "tv",
-      "source": "output/store-110/raw/tr/tv/home.jpg",
-      "source_sha256": "efc735f69d78286afa5cde48327053e881250ec1e18d8fe0a3cc06dbf486ec17",
+      "source": "output/website-tmdb-2026-11-24/raw/tr/tv/home.png",
+      "source_sha256": "eb54a825b4608c11f4638eef7af14038e4d5926da7ab05acda6b66c3a7f14e6f",
       "output": "assets/screens/tr/tv.jpg",
-      "output_sha256": "78d724cbfa043c77e38fd02e9df7486a70f1ca0ca9e8dee2ed231fe5a89e436b"
+      "output_sha256": "6101547c0c9fafa62245cdf3ac846c8d0fc42d77c6d38e1c5b5056e9f5507d75"
     },
     {
       "locale": "pt-BR",
       "device": "tv",
-      "source": "output/store-110/raw/pt-BR/tv/home.jpg",
-      "source_sha256": "3e4600c148d039d2a56acc0474e3ba158f10da45ab725965fa81ccb2e355a5e6",
+      "source": "output/website-tmdb-2026-11-24/raw/pt-BR/tv/home.png",
+      "source_sha256": "a740e2c5fe3d0cae1ae3e00d1ea1f6ec634dbb60ae644402d5d1c23ea7f2d910",
       "output": "assets/screens/pt-BR/tv.jpg",
-      "output_sha256": "45d63bcdcaa1a557ddff26bdad4cb7b013ee4c8d2ffb6abcd16068b0da7b17e3"
+      "output_sha256": "68b291c50328098a9ecec39f1ab181f3da8e01cec4eb0599ff85d54509cb7ba0"
     },
     {
       "locale": "pt-PT",
       "device": "tv",
-      "source": "output/store-110/raw/pt-PT/tv/home.jpg",
-      "source_sha256": "82db4611a0410c017e137927d76b4fc1f34d7c353d4f56b8dfab2df729b1ac96",
+      "source": "output/website-tmdb-2026-11-24/raw/pt-PT/tv/home.png",
+      "source_sha256": "e3dbac44e6f2bb987860f95efc908a88e0b24933d2f93268d04480b585c7ea68",
       "output": "assets/screens/pt-PT/tv.jpg",
-      "output_sha256": "0f33d025ccf9234d14e1cb730bad1131dd702da533b4a560172fa696895ff21e"
+      "output_sha256": "1ea640a84f75aa3a82e88756d87a5372f6efeef85e067dfaf2982709ad49df68"
     }
   ]
 }
