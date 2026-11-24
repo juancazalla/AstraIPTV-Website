@@ -6,7 +6,7 @@ https://juancazalla.github.io/AstraIPTV-Website/
 
 ## Design and languages
 
-The site follows the current Apple app: the purple Astra mark, lavender accent (`#A391FF`) and dark neutral surfaces. The home page pairs an editorial headline with native Apple TV and iPhone screens, followed by six feature cards, device showcases, a privacy panel and native FAQ disclosures. The upcoming 1.0.2 update is labelled separately from the app already available on the App Store. It always uses the dark theme, regardless of the system’s color scheme, and works without JavaScript, external fonts, analytics, forms or first-party cookies. GitHub Pages hosts the site under its own privacy statement.
+The site uses Astra’s purple mark, lavender accent (`#A391FF`) and dark neutral surfaces. The home page presents the released 1.1.0 features, including Multiview, per-profile Home customization and the Apple TV redesign. Native iPhone and Apple TV captures appear in the hero, with a two-channel iPad Multiview capture in the device showcase. It always uses the dark theme, regardless of the system’s color scheme, and works without JavaScript, external fonts, analytics, forms or first-party cookies. GitHub Pages hosts the site under its own privacy statement.
 
 Home, connection guide, support and privacy are available in all 12 complete iOS localizations. Arabic uses right-to-left layout. The language menu keeps the current page; every page has reciprocal `hreflang` links and a canonical URL.
 
@@ -43,19 +43,17 @@ GitHub Pages publishes the root of `main` after each push. This public repositor
 
 ## Real app assets
 
-`assets/screens/<locale>/` contains actual localized simulator screenshots of iPhone, iPad and Apple TV using Astra’s fictional demo catalogue. The website uses the reviewed 1.0.2 campaign started on 2026-10-27 and captured on 27–28 October, including Última Luz and other invented titles, in all 12 languages. All 36 native input hashes were checked against their frozen composition records before web encoding. Use fictional titles and artwork for future screenshot updates. No playable streams or catalogue are bundled with Astra. Images are proportionally resized and encoded for the web; the app interface is not reconstructed. WebP is used in the page and JPEG in social preview metadata. All website images are served locally.
+`assets/screens/<locale>/` contains actual localized simulator screenshots of iPhone, iPad and Apple TV using Astra’s fictional demo catalogue. The home pages use the 1.1.0 campaign captured on 18 November 2026. The Televizo alternative pages use the Apple TV guide from the same campaign. The captures were resized proportionally and encoded for the web. WebP is used for page images and JPEG for social previews. All website images are served locally.
 
-`assets/screens/manifest.json` records the capture batch, original paths, original screenshot hashes and output hashes. The native PNGs are retained in the private app checkout under `release/app-store/raw/` and `release/app-store/tvos/raw/`. The mark is copied from the app’s BrandMark asset. This website update does not change the app or its App Store screenshots.
+`assets/screens/manifest.json` records the capture date, app source commit, original paths and input and output hashes. The importer verifies each native capture against the App Store campaign report before encoding any images. It reads the published website version from `content/config.json`.
 
-To refresh assets from the verified 1.0.2 native captures in the app checkout, install `cwebp` and use macOS `sips`, then run:
+To reproduce this capture set, retain the native campaign files in the private app checkout and use `cwebp` and macOS `sips`.
 
 ```sh
-python3 scripts/import-assets.py --app-root ../AstraIPTV --capture-date 2026-10-28 --capture-metadata assets/screens/capture-provenance.json
+python3 scripts/import-assets.py --app-root ../AstraIPTV --native-root output/store-110/raw --capture-date 2026-11-18
 python3 scripts/build.py
 python3 scripts/validate.py
 ```
-
-For a new native capture batch, use the importer’s `--native-root`, `--capture-date` and `--capture-metadata` options and keep the catalogue fictional.
 
 ## Apple acquisition channel
 
@@ -67,14 +65,8 @@ The iOS/iPadOS and tvOS 1.0.0 listings were verified as downloadable through ASC
 
 The `televizo-ios.html` page, `televizo-ios-en.html` and `<locale>/televizo-ios.html` routes explain Astra as an independent alternative for Apple devices. They cover all twelve site languages and the fifteen researched storefronts without duplicating pages for countries sharing a language. `content/televizo.json` holds the copy. Every localized page has a download action, source reconnection instructions, a current reference to Televizo’s own website, a clear independence notice and a real localized Astra channel-guide screenshot. Footer links, reciprocal language menus and the sitemap make the pages discoverable. Publishing these pages does not prove indexing, web ranking or App Store ranking gains.
 
-The additional guide images are encoded from the frozen, fictional 1.0.2 native captures. To refresh this set, run `python3 scripts/import-guide-assets.py --app-root ../AstraIPTV` before regenerating the pages. All inputs are checked against the release campaign hashes before any public image is overwritten. `assets/screens/guide-manifest.json` records source and output hashes; the normal validation checks these twelve outputs as well as the 36 original images. Do not substitute screenshots from another app or from a private playlist.
-
 The campaign names in `acquisition/apple-campaigns.json` are preparation for App Analytics links. The provider token is still unset; the pages deliberately use the working universal App Store link and do not claim attributed installs. A separate live-TV product page is being prepared in App Store Connect; do not link visitors to its `ppid` until its approved, available state has been checked. Advertising and organic rankings must be measured separately.
 
 ## Android review documents
 
 `content/android.json` contains separate Android and Android TV support and privacy disclosures in Spanish and English. `scripts/build.py` generates `privacy-android.html`, `privacy-android-en.html`, `support-android.html` and `support-android-en.html`, retaining the existing Apple disclosures. These pages describe Android Keystore/local storage, source connections and optional Firebase collection, and are included in the sitemap and validation.
-
-## Verification of the 1.0.2 website refresh
-
-The 30 October refresh preserves all existing public routes and the 12 page-preserving language menus. Automated validation checks 52 pages, local links, anchors, translations and the hashes of all 36 native screenshots and 12 social previews. Browser QA covers desktop and mobile layouts, Arabic direction, a long German translation, language switching and FAQ disclosures. The site remains static and has no visitor-side scripts or analytics.

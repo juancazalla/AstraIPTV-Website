@@ -61,6 +61,9 @@ def icon(name, size=24):
         'profile': '<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',
         'sport': '<path d="M8 3h8v6a4 4 0 0 1-8 0zM8 5H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4M12 13v5m-4 3h8m-8-3h8"/>',
         'download': '<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',
+        'multiview': '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14m0-7h9"/>',
+        'rewind': '<path d="M11 7 4 12l7 5zm9 0-7 5 7 5z"/>',
+        'tv': '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/>',
         'arrow': '<path d="M5 12h14m-5-5 5 5-5 5"/>',
     }
     return f'<svg width="{size}" height="{size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths[name]}</svg>'
@@ -98,14 +101,17 @@ def load_content():
 def home(data, prefix, urls, code):
     t = lambda key: esc(data[key])
     app_store_url = esc(CONFIG['app_store_url'])
+    app_version = esc(CONFIG['app_version'])
     source = f'{prefix}assets/screens/{code}/'
     def screen(device):
         digest = hashlib.sha256((ROOT / f'assets/screens/{code}/{device}.webp').read_bytes()).hexdigest()[:12]
         return f'{source}{device}.webp?v={digest}'
+    feature_icons = {7: 'multiview', 4: 'profile', 2: 'live', 3: 'play', 8: 'rewind',
+                     5: 'sport', 1: 'list', 6: 'download', 9: 'tv'}
     features = '\n'.join(f'''<article class="feature-card">
-          <div class="feature-top"><span class="feature-icon">{icon(symbol, 26)}</span><span class="feature-number" aria-hidden="true">0{i}</span></div>
+          <span class="feature-icon">{icon(symbol, 26)}</span>
           <h3>{t(f'feature_{i}_title')}</h3><p>{t(f'feature_{i}_body')}</p>
-        </article>''' for i, symbol in enumerate(('list', 'live', 'play', 'profile', 'sport', 'download'), 1))
+        </article>''' for i, symbol in feature_icons.items())
     faq = '\n'.join(f'''<details class="faq-item"><summary>{t(f'faq_{i}_q')}<span class="plus" aria-hidden="true"></span></summary><p>{t(f'faq_{i}_a')}</p></details>''' for i in range(1, 5))
     return f'''  <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
@@ -120,7 +126,7 @@ def home(data, prefix, urls, code):
       <figure class="hero-visual">
         <div class="screen-stage">
           <div class="tv-frame"><img src="{screen('tv')}" width="1600" height="900" alt="{t('tv_alt')}" fetchpriority="high"></div>
-          <div class="hero-phone phone-frame"><img src="{screen('iphone')}" width="864" height="1878" alt="{t('phone_alt')}"></div>
+          <div class="hero-phone phone-frame"><img src="{screen('iphone')}" width="880" height="1912" alt="{t('phone_alt')}"></div>
           <span class="stage-label" aria-hidden="true">Astra <span>✦</span> <bdi>Apple TV + iPhone</bdi></span>
         </div>
         <figcaption>{t('demo_caption')}</figcaption>
@@ -128,14 +134,14 @@ def home(data, prefix, urls, code):
       </div>
     </section>
     <section class="experience wrap" id="experience">
-      <div class="experience-heading"><div><p class="release-label">{t('release_label')}</p><h2>{t('feature_title')}</h2></div><p class="feature-intro">{t('feature_intro')}</p></div>
+      <div class="experience-heading"><p class="release-label"><bdi>Astra {app_version}</bdi></p><h2>{t('feature_title')}</h2></div>
       <div class="feature-grid">{features}</div>
     </section>
     <section class="devices wrap" id="devices">
       <div class="section-heading"><p class="eyebrow"><bdi>iPhone · iPad · Apple TV</bdi></p><h2>{t('devices_title')}</h2><p>{t('devices_body')}</p></div>
       <div class="device-grid">
         <figure class="tablet-showcase"><figcaption class="device-caption"><bdi>iPad</bdi><span>{t('tablet_tagline')}</span></figcaption><div class="tablet-frame"><img src="{screen('ipad')}" width="1080" height="1440" alt="{t('tablet_alt')}" loading="lazy"></div></figure>
-        <figure class="phone-showcase"><figcaption class="device-caption"><bdi>iPhone</bdi><span>{t('phone_tagline')}</span></figcaption><div class="phone-frame"><img src="{screen('iphone')}" width="864" height="1878" alt="{t('phone_alt')}" loading="lazy"></div></figure>
+        <figure class="phone-showcase"><figcaption class="device-caption"><bdi>iPhone</bdi><span>{t('phone_tagline')}</span></figcaption><div class="phone-frame"><img src="{screen('iphone')}" width="880" height="1912" alt="{t('phone_alt')}" loading="lazy"></div></figure>
       </div>
       <p class="device-note">{t('devices_note')}</p>
     </section>

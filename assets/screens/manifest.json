@@ -1,662 +1,539 @@
 {
-  "description": "Actual native Astra 1.0.2 simulator captures from the reviewed fictional catalogue campaign refresh-2026-10-27. Encoding and proportional resize only; no UI reconstruction.",
-  "source_commit": "c4226ec42954020bf607b5b041c3f7857c76493c",
-  "campaign": "refresh-2026-10-27",
-  "source_evidence": "release/app-store/evidence/refresh-2026-10-27/source-provenance.json",
-  "capture_method": "git archive captured HEAD, explicit DEBUG metadata adapter, native XCTest capture harness, reviewed German product-translation overlay, and reviewed real rating-card layout overlay",
-  "native_hash_verification": [
-    {
-      "locale": "es",
-      "device": "iphone",
-      "source": "release/app-store/raw/es-ES/iphone/01-library.png",
-      "source_sha256": "46285521479fee3f4251d510759b8606fa740e749e267880246e71185484c419",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-ES-iphone.json"
-    },
-    {
-      "locale": "es",
-      "device": "ipad",
-      "source": "release/app-store/raw/es-ES/ipad/01-library.png",
-      "source_sha256": "75afe202ef1c0fd6a43e18b341bc46ce68ec28ce14866385fb665061458735ed",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-ES-ipad.json"
-    },
-    {
-      "locale": "es",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/es-ES/01-library.png",
-      "source_sha256": "24751faddafbd32ba94ea8db1deb52f35db5e18bdca8490f8439d96dce865187",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-ES-tv.json"
-    },
-    {
-      "locale": "es-419",
-      "device": "iphone",
-      "source": "release/app-store/raw/es-MX/iphone/01-library.png",
-      "source_sha256": "4bf8c842d19ae3a366b19a112db7e3ed75351ae3d040051dbf796a59beff54d3",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-MX-iphone.json"
-    },
-    {
-      "locale": "es-419",
-      "device": "ipad",
-      "source": "release/app-store/raw/es-MX/ipad/01-library.png",
-      "source_sha256": "61ff64bf364a6053707090afe4006eb5bfdedb777cd2cbd8600e378c2ea2e0c8",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-MX-ipad.json"
-    },
-    {
-      "locale": "es-419",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/es-MX/01-library.png",
-      "source_sha256": "8bc0ce5b171ba12d6ab4399b582cbed3bab1778f21dcf18e2f604eab9580b956",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/es-MX-tv.json"
-    },
-    {
-      "locale": "en",
-      "device": "iphone",
-      "source": "release/app-store/raw/en-US/iphone/01-library.png",
-      "source_sha256": "36794446d68a43e9a7477c7aaf514a91e01d3706886eac7993fb8ac111eec95a",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/en-US-iphone.json"
-    },
-    {
-      "locale": "en",
-      "device": "ipad",
-      "source": "release/app-store/raw/en-US/ipad/01-library.png",
-      "source_sha256": "0b7fdfbd8ea2a7f3623f5127c3aa29b16f1d57aae430c9307643ae7766cf65e3",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/en-US-ipad.json"
-    },
-    {
-      "locale": "en",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/en-US/01-library.png",
-      "source_sha256": "381abf46c9f82be42c3e57421f9c7b7a97e4a854a3d1932db4e0ec48f62af2f9",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/en-US-tv.json"
-    },
-    {
-      "locale": "fr",
-      "device": "iphone",
-      "source": "release/app-store/raw/fr-FR/iphone/01-library.png",
-      "source_sha256": "afb790d8ed563bb7af1b12d86de6113bd2c4e10bd67d197bc4bae3b1b33bb125",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/fr-FR-iphone.json"
-    },
-    {
-      "locale": "fr",
-      "device": "ipad",
-      "source": "release/app-store/raw/fr-FR/ipad/01-library.png",
-      "source_sha256": "f6c4187f5926300d1ee3dc4d913cb0cec4371e63b6cc5dda2f963019190c2bcd",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/fr-FR-ipad.json"
-    },
-    {
-      "locale": "fr",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/fr-FR/01-library.png",
-      "source_sha256": "9be57d375f48dc81c26bc566ca20b04aa9225e7f6b49bbacbf51983159077329",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/fr-FR-tv.json"
-    },
-    {
-      "locale": "it",
-      "device": "iphone",
-      "source": "release/app-store/raw/it/iphone/01-library.png",
-      "source_sha256": "6e398dc532eb6fc82770d2cba77a40d74e8d2dd8643b312f609540e293345813",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/it-iphone.json"
-    },
-    {
-      "locale": "it",
-      "device": "ipad",
-      "source": "release/app-store/raw/it/ipad/01-library.png",
-      "source_sha256": "e8107395146ee857e250e76789b1e516280adcb5c6e0583792192c3f61c51ee3",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/it-ipad.json"
-    },
-    {
-      "locale": "it",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/it/01-library.png",
-      "source_sha256": "3c91ecfcf1ab43ae948aea55c22c0cc8a91ffe0727846f1eeaa2b97fdb75d346",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/it-tv.json"
-    },
-    {
-      "locale": "de",
-      "device": "iphone",
-      "source": "release/app-store/raw/de-DE/iphone/01-library.png",
-      "source_sha256": "0219cac9edf2967fb6a28126ce63117ba7043e95c38446724b87eb60ad283223",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/de-DE-iphone.json"
-    },
-    {
-      "locale": "de",
-      "device": "ipad",
-      "source": "release/app-store/raw/de-DE/ipad/01-library.png",
-      "source_sha256": "e97c1555d090b10cdf71bdd10d55dbd54cec21a3f3aaec0469b9f01a6f67c57a",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/de-DE-ipad.json"
-    },
-    {
-      "locale": "de",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/de-DE/01-library.png",
-      "source_sha256": "fe1e324c28c172380fb068f72aa6ae6307f47b3e800e7380977ce1f00fc43b54",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/de-DE-tv.json"
-    },
-    {
-      "locale": "nl",
-      "device": "iphone",
-      "source": "release/app-store/raw/nl-NL/iphone/01-library.png",
-      "source_sha256": "2f30871ec00abfa2e65f464d9f63cbc9728529b1841f2fceb738c4fada498b2b",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/nl-NL-iphone.json"
-    },
-    {
-      "locale": "nl",
-      "device": "ipad",
-      "source": "release/app-store/raw/nl-NL/ipad/01-library.png",
-      "source_sha256": "a9e33acc7d4e2f4715e0ad18c69c9a3ad4290d762740e239663fdcdd11e4607b",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/nl-NL-ipad.json"
-    },
-    {
-      "locale": "nl",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/nl-NL/01-library.png",
-      "source_sha256": "1be68dd0531ddc84116a51caf03fdff989f9fbd09b8694ac0b44486a1c9a9446",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/nl-NL-tv.json"
-    },
-    {
-      "locale": "ar",
-      "device": "iphone",
-      "source": "release/app-store/raw/ar-SA/iphone/01-library.png",
-      "source_sha256": "134ac4a788d23bf8e48f45a1edfdd3f582e35f889c0bf6e7cfbe42e42e51032e",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/ar-SA-iphone.json"
-    },
-    {
-      "locale": "ar",
-      "device": "ipad",
-      "source": "release/app-store/raw/ar-SA/ipad/01-library.png",
-      "source_sha256": "bc9425bf5300e9c846942a3f4a89f0c0b551b3828385c2c5fd41d47a1ca80bbd",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/ar-SA-ipad.json"
-    },
-    {
-      "locale": "ar",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/ar-SA/01-library.png",
-      "source_sha256": "8d5485055b1b107600968fe512d442b6c437fcd6b14dc9224b4dae437df8865d",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/ar-SA-tv.json"
-    },
-    {
-      "locale": "id",
-      "device": "iphone",
-      "source": "release/app-store/raw/id/iphone/01-library.png",
-      "source_sha256": "4e99a9e6deb301e67593ec8379374d95907a5b1cfd2c6b18d36e22a2802b53c5",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/id-iphone.json"
-    },
-    {
-      "locale": "id",
-      "device": "ipad",
-      "source": "release/app-store/raw/id/ipad/01-library.png",
-      "source_sha256": "c46c5e485ed1aef7164f74c02d6a39c8e3260658440d4fa3fbf05524a0a0fbcb",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/id-ipad.json"
-    },
-    {
-      "locale": "id",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/id/01-library.png",
-      "source_sha256": "370ccb657d6d570328d613da3591521b99f9701d00dbfdf748ba50bfa9fed5dc",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/id-tv.json"
-    },
-    {
-      "locale": "tr",
-      "device": "iphone",
-      "source": "release/app-store/raw/tr/iphone/01-library.png",
-      "source_sha256": "76fbe8f480dd74f99e05ce9a50a102ea6271655b64c40719bd75094317ba918f",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/tr-iphone.json"
-    },
-    {
-      "locale": "tr",
-      "device": "ipad",
-      "source": "release/app-store/raw/tr/ipad/01-library.png",
-      "source_sha256": "04312fb233fd654dc218afe4d8bad77307f603d133bad5b5eaab0e8c210de7cc",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/tr-ipad.json"
-    },
-    {
-      "locale": "tr",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/tr/01-library.png",
-      "source_sha256": "bc9f5254da3d92caef8e9e502f0989362c474bfa0000805601608030c3b0bf9f",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/tr-tv.json"
-    },
-    {
-      "locale": "pt-BR",
-      "device": "iphone",
-      "source": "release/app-store/raw/pt-BR/iphone/01-library.png",
-      "source_sha256": "95004b8d012040d67db6b6e42ab0b848c63a6e856594630b47301bb44202ff31",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-BR-iphone.json"
-    },
-    {
-      "locale": "pt-BR",
-      "device": "ipad",
-      "source": "release/app-store/raw/pt-BR/ipad/01-library.png",
-      "source_sha256": "f99c8750b48ca3f54273e61eba4f8e2f188c2675f8b707cce8d8558124b4aeb6",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-BR-ipad.json"
-    },
-    {
-      "locale": "pt-BR",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/pt-BR/01-library.png",
-      "source_sha256": "0f687969152fa8414549eccbf097557644db90c9838bb07c574f6a18fd27aa8c",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-BR-tv.json"
-    },
-    {
-      "locale": "pt-PT",
-      "device": "iphone",
-      "source": "release/app-store/raw/pt-PT/iphone/01-library.png",
-      "source_sha256": "ea868e2688319d93a30db1156a0fdbf980b52fec8098732eeba943819bffeb4b",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-PT-iphone.json"
-    },
-    {
-      "locale": "pt-PT",
-      "device": "ipad",
-      "source": "release/app-store/raw/pt-PT/ipad/01-library.png",
-      "source_sha256": "7ad3ab392a6aab3661eb7bf2e66872e8a6661dc638eb59ca790ff81fe28c6f30",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-PT-ipad.json"
-    },
-    {
-      "locale": "pt-PT",
-      "device": "tv",
-      "source": "release/app-store/tvos/raw/pt-PT/01-library.png",
-      "source_sha256": "f658bbc23ae64ac5ede8098f6f44b04c8ca0be189bb345c3f699f0e6dd749b46",
-      "verified_against": "release/app-store/evidence/refresh-2026-10-27/composition-records/pt-PT-tv.json"
-    }
-  ],
-  "capture_date": "2026-10-28",
+  "campaign": "1.1.0",
+  "source_commit": "d68023c177a2b01099d3abcda21eda1c7ba216c8",
+  "source_evidence": "release/app-store/campaign-1.1.0/verification/campaign.json",
+  "capture_date": "2026-11-18",
+  "content": "Native simulator captures of the fictional Astra demo catalogue. Proportional resize and encoding only.",
   "assets": [
     {
       "locale": "es",
       "device": "iphone",
-      "source": "release/app-store/raw/es-ES/iphone/01-library.png",
-      "source_sha256": "46285521479fee3f4251d510759b8606fa740e749e267880246e71185484c419",
+      "source": "output/store-110/raw/es-ES/iphone/home.jpg",
+      "source_sha256": "cff188991d4b7d7859afa477aebfd6cba571cb4f7041a6e911caf85bc2b7ff49",
       "output": "assets/screens/es/iphone.webp",
-      "output_sha256": "9e48a02e318962c1ccd473169467d9a6d194a08229480db17469bdd9c03e1128",
-      "bytes": 160432
+      "output_sha256": "3b767c171ea6fe641f9828cad43f2f26b43b7ff9e830e285788f19ff37bceb8e",
+      "bytes": 158512
     },
     {
       "locale": "es",
       "device": "ipad",
-      "source": "release/app-store/raw/es-ES/ipad/01-library.png",
-      "source_sha256": "75afe202ef1c0fd6a43e18b341bc46ce68ec28ce14866385fb665061458735ed",
+      "source": "output/store-110/raw/es-ES/ipad/multiview.jpg",
+      "source_sha256": "b44ef7a38978a38bf33071b344c33156a45988c7745c8bdc2b19b35f1b091f0e",
       "output": "assets/screens/es/ipad.webp",
-      "output_sha256": "fa105a2af4ac373954681123d3d4a9747c570f9f28b7117e3d8a167e013bede7",
-      "bytes": 183286
+      "output_sha256": "5659b4d10475b77ff12a12d09f79908943bb6c53bf027562c469da55d57f8daf",
+      "bytes": 166208
     },
     {
       "locale": "es",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/es-ES/01-library.png",
-      "source_sha256": "24751faddafbd32ba94ea8db1deb52f35db5e18bdca8490f8439d96dce865187",
+      "source": "output/store-110/raw/es-ES/tv/home.jpg",
+      "source_sha256": "0ad81c4b7f2aae6ce45fde77afe174014476e92d4e3bddca3bf79eff33853f5c",
       "output": "assets/screens/es/tv.webp",
-      "output_sha256": "539c6ea32d9bae14a652a8a34445605d48939ed15ad3716def2b981feec23deb",
-      "bytes": 220588
+      "output_sha256": "a431a849771d62761c50d54e1612a24e62eeddac733f6ea632647b0113be73fe",
+      "bytes": 235254
+    },
+    {
+      "locale": "es",
+      "device": "guide",
+      "source": "output/store-110/raw/es-ES/tv/guide.jpg",
+      "source_sha256": "8ffeac56fd5bd423f840437dd08e8293d78a45706b21c9c05a72d0531b8fbe72",
+      "output": "assets/screens/es/guide.webp",
+      "output_sha256": "59d624e5fae5ff62415a78dcac2bfc5cfd29b2a0a8c531fbbb1f8eb8622a97ca",
+      "bytes": 87948
     },
     {
       "locale": "es-419",
       "device": "iphone",
-      "source": "release/app-store/raw/es-MX/iphone/01-library.png",
-      "source_sha256": "4bf8c842d19ae3a366b19a112db7e3ed75351ae3d040051dbf796a59beff54d3",
+      "source": "output/store-110/raw/es-MX/iphone/home.jpg",
+      "source_sha256": "f1394286c20130f41d1f71dded9b524b8bd49f0b931e2be70fdd542903d117ad",
       "output": "assets/screens/es-419/iphone.webp",
-      "output_sha256": "6ae9842ad295832427d26396e1cbfd1ec288777b06554196dcfc2217730e04a1",
-      "bytes": 172064
+      "output_sha256": "ab2e791f7d0167396c907d9aa8ffd099d85277984cb85817687f654791e97d5a",
+      "bytes": 169190
     },
     {
       "locale": "es-419",
       "device": "ipad",
-      "source": "release/app-store/raw/es-MX/ipad/01-library.png",
-      "source_sha256": "61ff64bf364a6053707090afe4006eb5bfdedb777cd2cbd8600e378c2ea2e0c8",
+      "source": "output/store-110/raw/es-MX/ipad/multiview.jpg",
+      "source_sha256": "6eac4b764308f2bbf7fdffef2ab73c2b805da3b740659d35f123b8611ff07afd",
       "output": "assets/screens/es-419/ipad.webp",
-      "output_sha256": "7b708183e15b8dd49e39bbdde929f3c9821ed066cf833890f334272c8c902c22",
-      "bytes": 185706
+      "output_sha256": "cb573162d7acc92d8da5e9228d305af32b449f74fb1868c726fa19d3582a8731",
+      "bytes": 166330
     },
     {
       "locale": "es-419",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/es-MX/01-library.png",
-      "source_sha256": "8bc0ce5b171ba12d6ab4399b582cbed3bab1778f21dcf18e2f604eab9580b956",
+      "source": "output/store-110/raw/es-MX/tv/home.jpg",
+      "source_sha256": "292599a31a7ffcf09d15f6acaf455d45c5f5a9aadb73b0499511fad99fd0c6fe",
       "output": "assets/screens/es-419/tv.webp",
-      "output_sha256": "f84cb062a3134ad6237d6def8d93f9225b6cac851b34510152d56f2b7f856d4b",
-      "bytes": 179858
+      "output_sha256": "db52df6d5c5c43336ce89b895bda5926e73648f1947fa2e681835c089ee8fab3",
+      "bytes": 191228
+    },
+    {
+      "locale": "es-419",
+      "device": "guide",
+      "source": "output/store-110/raw/es-MX/tv/guide.jpg",
+      "source_sha256": "673ac86786a948fd6ad32e9dc0ef1d1c7e349ebc4f27e5258e62aa6be2c8814b",
+      "output": "assets/screens/es-419/guide.webp",
+      "output_sha256": "192deceda3c63393108ba4ae2fab7431c3f7913bd9ae9ab923793d7a80d350dc",
+      "bytes": 80304
     },
     {
       "locale": "en",
       "device": "iphone",
-      "source": "release/app-store/raw/en-US/iphone/01-library.png",
-      "source_sha256": "36794446d68a43e9a7477c7aaf514a91e01d3706886eac7993fb8ac111eec95a",
+      "source": "output/store-110/raw/en-US/iphone/home.jpg",
+      "source_sha256": "88901a1999e12ff1043237013513033e09c0d0e5310f31767d554535cde84d48",
       "output": "assets/screens/en/iphone.webp",
-      "output_sha256": "1b267f32b2f42dc6f1ecaa2b33429d1b89e179f676f3b3e826f359560a01b301",
-      "bytes": 165822
+      "output_sha256": "4d5f1464ba41ad303ee2ae4b393092dc29e5c99ca8c1c5319d20902862bd42e2",
+      "bytes": 165074
     },
     {
       "locale": "en",
       "device": "ipad",
-      "source": "release/app-store/raw/en-US/ipad/01-library.png",
-      "source_sha256": "0b7fdfbd8ea2a7f3623f5127c3aa29b16f1d57aae430c9307643ae7766cf65e3",
+      "source": "output/store-110/raw/en-US/ipad/multiview.jpg",
+      "source_sha256": "4fcf348708ccc948eb2466f554b6b8534440567bc4b0b1d5de2122b2ceab8a34",
       "output": "assets/screens/en/ipad.webp",
-      "output_sha256": "77e7982c259ab0f526c023b0064032523ade91cf3f5139264446940f484ad8c1",
-      "bytes": 186464
+      "output_sha256": "c0376f78a5882ecb95758931a2db6aa369a2972de0620aee9fdeadb454ca3dad",
+      "bytes": 155400
     },
     {
       "locale": "en",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/en-US/01-library.png",
-      "source_sha256": "381abf46c9f82be42c3e57421f9c7b7a97e4a854a3d1932db4e0ec48f62af2f9",
+      "source": "output/store-110/raw/en-US/tv/home.jpg",
+      "source_sha256": "f7b75099fc90d200881f1f2227ed15225f95cdb0155c406b794318df19c91479",
       "output": "assets/screens/en/tv.webp",
-      "output_sha256": "f6dbec0f387d07eb733898e774dffa7f8d67c01db2b1964dcb1b685dc411e42b",
-      "bytes": 188524
+      "output_sha256": "2f0367d77d6eb76389ac79c9bcfaa603bf1ee724c8534dd79c94d56958b2bec7",
+      "bytes": 212100
+    },
+    {
+      "locale": "en",
+      "device": "guide",
+      "source": "output/store-110/raw/en-US/tv/guide.jpg",
+      "source_sha256": "6728d4e68ff4961e1acd347bb00624978e4afa05518f7c168769053375df98f2",
+      "output": "assets/screens/en/guide.webp",
+      "output_sha256": "5e472c9cece4c1c52ebd0f5e111211eedfc5991c522c125a859747a990ee7cdf",
+      "bytes": 81732
     },
     {
       "locale": "fr",
       "device": "iphone",
-      "source": "release/app-store/raw/fr-FR/iphone/01-library.png",
-      "source_sha256": "afb790d8ed563bb7af1b12d86de6113bd2c4e10bd67d197bc4bae3b1b33bb125",
+      "source": "output/store-110/raw/fr-FR/iphone/home.jpg",
+      "source_sha256": "9326579c989c864b2a68f4a90cf8c098fc63b50a23ff3236f7cc8dfffe00127e",
       "output": "assets/screens/fr/iphone.webp",
-      "output_sha256": "b523b729fd66d76f78a330d1eda892bbc0c6b5823f030053d14d5a3760442075",
-      "bytes": 164248
+      "output_sha256": "9f7d36f162f727ce076c82e2940053b829708531fbea9107fbee0b876314a8d6",
+      "bytes": 164612
     },
     {
       "locale": "fr",
       "device": "ipad",
-      "source": "release/app-store/raw/fr-FR/ipad/01-library.png",
-      "source_sha256": "f6c4187f5926300d1ee3dc4d913cb0cec4371e63b6cc5dda2f963019190c2bcd",
+      "source": "output/store-110/raw/fr-FR/ipad/multiview.jpg",
+      "source_sha256": "bd0d4c375eb294d46d57bce1457e50d2067a8e266783287058fea8663e6e66c9",
       "output": "assets/screens/fr/ipad.webp",
-      "output_sha256": "0db639a7ba8716999156f3b331f157b1ae3a46b4a6af8c802bee4c90c89d93ee",
-      "bytes": 168404
+      "output_sha256": "c54d56cd14d88175301c50775ceb9e7af18315bb52e6333acc6ceee4114230aa",
+      "bytes": 171786
     },
     {
       "locale": "fr",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/fr-FR/01-library.png",
-      "source_sha256": "9be57d375f48dc81c26bc566ca20b04aa9225e7f6b49bbacbf51983159077329",
+      "source": "output/store-110/raw/fr-FR/tv/home.jpg",
+      "source_sha256": "02f0589141f6387610ddcaf1ef5b242ca5607be862ed6ef7b877f8b4de46adab",
       "output": "assets/screens/fr/tv.webp",
-      "output_sha256": "04f5c030c29fbc280ad6244481d50c9d1ab5bc0fe0be23ef0325ee5efee73e68",
-      "bytes": 192506
+      "output_sha256": "77aa790b95b6d716cbadc1b9b0a7ca76d36032bd111a5680d4301316100a6600",
+      "bytes": 199956
+    },
+    {
+      "locale": "fr",
+      "device": "guide",
+      "source": "output/store-110/raw/fr-FR/tv/guide.jpg",
+      "source_sha256": "6c392483db46102a15add33eb597cef28b0d23914414bd171795b581cd438896",
+      "output": "assets/screens/fr/guide.webp",
+      "output_sha256": "7313fff5bc57af2490b76ff33bf4701122f1aaba14b7a87e55717654e6f2016c",
+      "bytes": 93686
     },
     {
       "locale": "it",
       "device": "iphone",
-      "source": "release/app-store/raw/it/iphone/01-library.png",
-      "source_sha256": "6e398dc532eb6fc82770d2cba77a40d74e8d2dd8643b312f609540e293345813",
+      "source": "output/store-110/raw/it/iphone/home.jpg",
+      "source_sha256": "e54d21d5a4b2967de9ec9ddd269948d0079d240e6842c181c93fb2609419b703",
       "output": "assets/screens/it/iphone.webp",
-      "output_sha256": "919ca19120a497979635ba0246a1ef0602cba8724a0e9a142ae6c44d139cc953",
-      "bytes": 170628
+      "output_sha256": "3c16432d0c5e62536106880150bcf3eaf98d1ce0aa230d92871fb013b9b7d5b2",
+      "bytes": 171202
     },
     {
       "locale": "it",
       "device": "ipad",
-      "source": "release/app-store/raw/it/ipad/01-library.png",
-      "source_sha256": "e8107395146ee857e250e76789b1e516280adcb5c6e0583792192c3f61c51ee3",
+      "source": "output/store-110/raw/it/ipad/multiview.jpg",
+      "source_sha256": "1ddeacf7af13419c588e036b47a51cc4561c2e7164d6bd264e6184d7aa4d90c4",
       "output": "assets/screens/it/ipad.webp",
-      "output_sha256": "caab64df2d990f8ca5dd464a949df9347de783a9e62c1fdbe6b6811c169d5a54",
-      "bytes": 202144
+      "output_sha256": "3f12909978f418543758d19f63830a6125105d0e534dc8223ad983f19a34170d",
+      "bytes": 155216
     },
     {
       "locale": "it",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/it/01-library.png",
-      "source_sha256": "3c91ecfcf1ab43ae948aea55c22c0cc8a91ffe0727846f1eeaa2b97fdb75d346",
+      "source": "output/store-110/raw/it/tv/home.jpg",
+      "source_sha256": "94d27aba98e6b656f8caa3292997f04441bb10924b9e71f852e644bf86db8732",
       "output": "assets/screens/it/tv.webp",
-      "output_sha256": "0611a09ec059237f1b7517a49ac8731366aead7a844544ef6310c6a42e319313",
-      "bytes": 197936
+      "output_sha256": "7ce3694277bd993c43f2af5ab42e7ad155e25cdd597d33e528aea72f0038363c",
+      "bytes": 206242
+    },
+    {
+      "locale": "it",
+      "device": "guide",
+      "source": "output/store-110/raw/it/tv/guide.jpg",
+      "source_sha256": "fdca8ad4da6e9bc9af0a779fdc6b551c5119eda997c6fd6b9459ae385802f055",
+      "output": "assets/screens/it/guide.webp",
+      "output_sha256": "237150ea76f4a415d46b85dada21cd35d4bab8f63f12b939f14402d06d25d909",
+      "bytes": 89572
     },
     {
       "locale": "de",
       "device": "iphone",
-      "source": "release/app-store/raw/de-DE/iphone/01-library.png",
-      "source_sha256": "0219cac9edf2967fb6a28126ce63117ba7043e95c38446724b87eb60ad283223",
+      "source": "output/store-110/raw/de-DE/iphone/home.jpg",
+      "source_sha256": "cfce74124d64e0390559f18ef55319c0283397404f2cc52da39dbe0bbc973c70",
       "output": "assets/screens/de/iphone.webp",
-      "output_sha256": "9993b228d71f44bb3d1e6dae5ef8c9044d06502df748e724ac31c75ee7ec4fc6",
-      "bytes": 137844
+      "output_sha256": "d99b18b2d9ff49c3eab50a252a24b74ecd8903a241ef63f90c58a5516d1e0e39",
+      "bytes": 138432
     },
     {
       "locale": "de",
       "device": "ipad",
-      "source": "release/app-store/raw/de-DE/ipad/01-library.png",
-      "source_sha256": "e97c1555d090b10cdf71bdd10d55dbd54cec21a3f3aaec0469b9f01a6f67c57a",
+      "source": "output/store-110/raw/de-DE/ipad/multiview.jpg",
+      "source_sha256": "2c3c732de91690e1e35b804055bc0957464c39fd145fa7b0d05df079893d1f3f",
       "output": "assets/screens/de/ipad.webp",
-      "output_sha256": "0ad8ee4b4ddbd1294d18a995b95233e608c948c4656a0a22fffc7a9e315b6e96",
-      "bytes": 161468
+      "output_sha256": "f065960555eb69449de2e733a90cde9303282ec8ab8669c5d1420a55c2f21acb",
+      "bytes": 166948
     },
     {
       "locale": "de",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/de-DE/01-library.png",
-      "source_sha256": "fe1e324c28c172380fb068f72aa6ae6307f47b3e800e7380977ce1f00fc43b54",
+      "source": "output/store-110/raw/de-DE/tv/home.jpg",
+      "source_sha256": "a9422c5abea34c3f425575d4c90d55c4c2910839e283aa1bdd7e2f306ba4d4af",
       "output": "assets/screens/de/tv.webp",
-      "output_sha256": "68d7e112c669e40033c1a1e3248a4a596c4cf1af8e6d769b9f8e6736b7761131",
-      "bytes": 169742
+      "output_sha256": "508526872cb5ed706cdee540c042c534d46fb9cebaba5fc1073c7349dfa897bb",
+      "bytes": 181328
+    },
+    {
+      "locale": "de",
+      "device": "guide",
+      "source": "output/store-110/raw/de-DE/tv/guide.jpg",
+      "source_sha256": "9dd4b0ed7d6c2da1ab742f177756a6cd19c59a5c6fe438f924ea765d0019034f",
+      "output": "assets/screens/de/guide.webp",
+      "output_sha256": "52175e7c235cca23af54a5a0d48d2b254b377ebac16e29b8602937f35025614e",
+      "bytes": 93196
     },
     {
       "locale": "nl",
       "device": "iphone",
-      "source": "release/app-store/raw/nl-NL/iphone/01-library.png",
-      "source_sha256": "2f30871ec00abfa2e65f464d9f63cbc9728529b1841f2fceb738c4fada498b2b",
+      "source": "output/store-110/raw/nl-NL/iphone/home.jpg",
+      "source_sha256": "8736bb43d18803a954bf4ffc7fd75948514f30ff02383d4ae66f583e366c00d5",
       "output": "assets/screens/nl/iphone.webp",
-      "output_sha256": "529dd91a6fa15b2bac3ec239c833932c273825e7b69e07be40425bee05cc40e9",
-      "bytes": 167494
+      "output_sha256": "6105a86807e50291bd901e9943c44244c80bd5de660b1509af1dd6d04ed242b3",
+      "bytes": 164614
     },
     {
       "locale": "nl",
       "device": "ipad",
-      "source": "release/app-store/raw/nl-NL/ipad/01-library.png",
-      "source_sha256": "a9e33acc7d4e2f4715e0ad18c69c9a3ad4290d762740e239663fdcdd11e4607b",
+      "source": "output/store-110/raw/nl-NL/ipad/multiview.jpg",
+      "source_sha256": "ddae93200e3f33ce35e2b4596a9c1b3622abb00b0748eb196bed763f8fbe31fd",
       "output": "assets/screens/nl/ipad.webp",
-      "output_sha256": "e40af3b8160858cd8a9097d1c696dca035dc6ec0418c14f699e27886737a7f79",
-      "bytes": 205642
+      "output_sha256": "73268f019169060252fa34ab8a2e170b329f5e2acb3b5f8765b32702c15c3718",
+      "bytes": 161642
     },
     {
       "locale": "nl",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/nl-NL/01-library.png",
-      "source_sha256": "1be68dd0531ddc84116a51caf03fdff989f9fbd09b8694ac0b44486a1c9a9446",
+      "source": "output/store-110/raw/nl-NL/tv/home.jpg",
+      "source_sha256": "1a2e2ebf3cc532432dca6e3e56d80c49da0b043d3b967778ef087d748cb68126",
       "output": "assets/screens/nl/tv.webp",
-      "output_sha256": "7f29f7c8bd8933d029c4f67341935a9774ba05667ce8ac96fdae7a36d71c5b91",
-      "bytes": 202494
+      "output_sha256": "a784c76f423157f96100b3d9965efcab000526c23a95ff7ac694b4c947ea8088",
+      "bytes": 213702
+    },
+    {
+      "locale": "nl",
+      "device": "guide",
+      "source": "output/store-110/raw/nl-NL/tv/guide.jpg",
+      "source_sha256": "1b30704bf32dba87f0002105eedcf4d14b9fc8d00e0b6d03b1d1c3a4cd969a73",
+      "output": "assets/screens/nl/guide.webp",
+      "output_sha256": "0891d719fe12a7c1aea1cc0828fa9c967bb9b384833316e01ff523dc02ba60c4",
+      "bytes": 86246
     },
     {
       "locale": "ar",
       "device": "iphone",
-      "source": "release/app-store/raw/ar-SA/iphone/01-library.png",
-      "source_sha256": "134ac4a788d23bf8e48f45a1edfdd3f582e35f889c0bf6e7cfbe42e42e51032e",
+      "source": "output/store-110/raw/ar-SA/iphone/home.jpg",
+      "source_sha256": "14d158c21457768da413f20d6f0ada5fe0f5f029b23700c4387889093f7f502c",
       "output": "assets/screens/ar/iphone.webp",
-      "output_sha256": "f5303f3ddf36907d796f839007a2e128e60088437690f97f3bdf220aabf8ef31",
-      "bytes": 143338
+      "output_sha256": "a5ea57cc460e3f01fd105f9fe78a2ce8d9d4708459a5e8aec7094274b5582226",
+      "bytes": 140452
     },
     {
       "locale": "ar",
       "device": "ipad",
-      "source": "release/app-store/raw/ar-SA/ipad/01-library.png",
-      "source_sha256": "bc9425bf5300e9c846942a3f4a89f0c0b551b3828385c2c5fd41d47a1ca80bbd",
+      "source": "output/store-110/raw/ar-SA/ipad/multiview.jpg",
+      "source_sha256": "a67f4cfbed05ce722ae4da5181695018d9e4e9e0fad2b312a5f65070cd3c8c32",
       "output": "assets/screens/ar/ipad.webp",
-      "output_sha256": "c89120262560631a6ec76c302d4a7fd74a2195e708ac7beceec48f888353c5c6",
-      "bytes": 158184
+      "output_sha256": "be1905eba766ef70eeb1760a5d4ccaf07b8e00cc24dfccae29b0bd8bf81e0d57",
+      "bytes": 166518
     },
     {
       "locale": "ar",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/ar-SA/01-library.png",
-      "source_sha256": "8d5485055b1b107600968fe512d442b6c437fcd6b14dc9224b4dae437df8865d",
+      "source": "output/store-110/raw/ar-SA/tv/home.jpg",
+      "source_sha256": "99fa794060c4b9eb942bdd2935a94195b91dd68e13fee4d3a4e589af297ee047",
       "output": "assets/screens/ar/tv.webp",
-      "output_sha256": "db69b5dc9c0f6bc0cceb8e9f73546f71798816357806e5cc94b976a4109ad142",
-      "bytes": 210822
+      "output_sha256": "bc890fdbd8f5dcdf3b0a1f4b0a8a761070f397448ca6b95619dab8e73018c667",
+      "bytes": 213728
+    },
+    {
+      "locale": "ar",
+      "device": "guide",
+      "source": "output/store-110/raw/ar-SA/tv/guide.jpg",
+      "source_sha256": "a3b9084942ff50df95b0a88d8e6bb34463d45b415ec827e70dd41586b560ca3b",
+      "output": "assets/screens/ar/guide.webp",
+      "output_sha256": "d1c4da1d5474a9e7e88566705d25b659ae7e08a96ce5846ce76246fc80647d10",
+      "bytes": 69620
     },
     {
       "locale": "id",
       "device": "iphone",
-      "source": "release/app-store/raw/id/iphone/01-library.png",
-      "source_sha256": "4e99a9e6deb301e67593ec8379374d95907a5b1cfd2c6b18d36e22a2802b53c5",
+      "source": "output/store-110/raw/id/iphone/home.jpg",
+      "source_sha256": "df97783cbe4bccfb6ad2b13a6704c195baf03075b453739cc7d50d1b5aace643",
       "output": "assets/screens/id/iphone.webp",
-      "output_sha256": "7cbc1d82f9027308693dc10e17b2cca94e91e1c5d631ee4a8bdfc3d282e5ae4a",
-      "bytes": 171578
+      "output_sha256": "e5c965e0001321cf8e1892db85bcba6d5de63cb032b429872f271cb94bc05569",
+      "bytes": 169894
     },
     {
       "locale": "id",
       "device": "ipad",
-      "source": "release/app-store/raw/id/ipad/01-library.png",
-      "source_sha256": "c46c5e485ed1aef7164f74c02d6a39c8e3260658440d4fa3fbf05524a0a0fbcb",
+      "source": "output/store-110/raw/id/ipad/multiview.jpg",
+      "source_sha256": "533b576e8864e0234f61dc2eafb311a5ea5c39f85af71fdcac234d625da4c2b4",
       "output": "assets/screens/id/ipad.webp",
-      "output_sha256": "486d7909811c244913101ebc3b91cf8bcbe569c80feb2ed870b162f285be9226",
-      "bytes": 204794
+      "output_sha256": "00bce4ab478302d9ab4fa97614b3b3b42b7fd3f966caa51d099a8d6d9accb2a9",
+      "bytes": 154232
     },
     {
       "locale": "id",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/id/01-library.png",
-      "source_sha256": "370ccb657d6d570328d613da3591521b99f9701d00dbfdf748ba50bfa9fed5dc",
+      "source": "output/store-110/raw/id/tv/home.jpg",
+      "source_sha256": "76435c7d9684e4d86d70cdddb10a9c318143cb3d9ab85dace35dcd20b8d49c6e",
       "output": "assets/screens/id/tv.webp",
-      "output_sha256": "17bd994e3de9c6bcb5088238dbbdbfe71190dfbf4c0400997f3d34e7a8b630e4",
-      "bytes": 222852
+      "output_sha256": "7714b0813fe9f086bf136ea5208c3688e6362e82d42fa0985a3f14fb8650bfeb",
+      "bytes": 232514
+    },
+    {
+      "locale": "id",
+      "device": "guide",
+      "source": "output/store-110/raw/id/tv/guide.jpg",
+      "source_sha256": "2752e5aed9f0efcfd157d85be8a619d58be19103191dda49b6eaff1f4ecdcc33",
+      "output": "assets/screens/id/guide.webp",
+      "output_sha256": "b0e1b92ddbc18c707d396f797dc8c6149b4f7782e4017896d0a51474e0e920de",
+      "bytes": 92590
     },
     {
       "locale": "tr",
       "device": "iphone",
-      "source": "release/app-store/raw/tr/iphone/01-library.png",
-      "source_sha256": "76fbe8f480dd74f99e05ce9a50a102ea6271655b64c40719bd75094317ba918f",
+      "source": "output/store-110/raw/tr/iphone/home.jpg",
+      "source_sha256": "868728e12fa7c29e7d3b5d256c739dce6c8fb417f64c11c55468fb81c6a6e456",
       "output": "assets/screens/tr/iphone.webp",
-      "output_sha256": "59b5d98ceced3408b24a78d56641478a9bd9e06f9c7a6de352e82caf959cda28",
-      "bytes": 155298
+      "output_sha256": "db8a25e6e63278808c183b2c1b091848eb8678e437d0cc6defcb3ff399d17933",
+      "bytes": 153312
     },
     {
       "locale": "tr",
       "device": "ipad",
-      "source": "release/app-store/raw/tr/ipad/01-library.png",
-      "source_sha256": "04312fb233fd654dc218afe4d8bad77307f603d133bad5b5eaab0e8c210de7cc",
+      "source": "output/store-110/raw/tr/ipad/multiview.jpg",
+      "source_sha256": "0aeb25b36855556f15e1931c4ee8b3236a7e11a210e8f64b87e87b0ad575159f",
       "output": "assets/screens/tr/ipad.webp",
-      "output_sha256": "d5d07d3839165b1b9f968e3d0828a05b4a75d5faf54cf0ec418d07724680e33d",
-      "bytes": 171942
+      "output_sha256": "7240e9d224d93ac6e7c13a5299921a0ace972330377ee8dbd24eb694e5246079",
+      "bytes": 166138
     },
     {
       "locale": "tr",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/tr/01-library.png",
-      "source_sha256": "bc9f5254da3d92caef8e9e502f0989362c474bfa0000805601608030c3b0bf9f",
+      "source": "output/store-110/raw/tr/tv/home.jpg",
+      "source_sha256": "efc735f69d78286afa5cde48327053e881250ec1e18d8fe0a3cc06dbf486ec17",
       "output": "assets/screens/tr/tv.webp",
-      "output_sha256": "365ed596a8af3b8085d723892b2d49df80a69a8defd5188702143d20536a6584",
-      "bytes": 183726
+      "output_sha256": "9c009759d5950154d0526ed9d49c21733840c4e8b580eab75a71c72132cc3312",
+      "bytes": 189030
+    },
+    {
+      "locale": "tr",
+      "device": "guide",
+      "source": "output/store-110/raw/tr/tv/guide.jpg",
+      "source_sha256": "ea6ee60bc25d321f1c86202392f7728c49eb22cc40abf00b9cd0359defa30622",
+      "output": "assets/screens/tr/guide.webp",
+      "output_sha256": "f23ee2094202bfe77b3fa301ec2698fc5a0d78cd9b4c756644a2e8e1daf8efaf",
+      "bytes": 83140
     },
     {
       "locale": "pt-BR",
       "device": "iphone",
-      "source": "release/app-store/raw/pt-BR/iphone/01-library.png",
-      "source_sha256": "95004b8d012040d67db6b6e42ab0b848c63a6e856594630b47301bb44202ff31",
+      "source": "output/store-110/raw/pt-BR/iphone/home.jpg",
+      "source_sha256": "6d5f1aaef24cd403136300263fadc18b235488a0fc15e75127f49ae70991b29c",
       "output": "assets/screens/pt-BR/iphone.webp",
-      "output_sha256": "b1caa9fbde38176bc10c0d08cf4634eea13464658927c83fab24f9473aa15a62",
-      "bytes": 177050
+      "output_sha256": "5f87e063d11c67400567e2fba983def02f24e84c836c97460655b0fe811e299a",
+      "bytes": 176232
     },
     {
       "locale": "pt-BR",
       "device": "ipad",
-      "source": "release/app-store/raw/pt-BR/ipad/01-library.png",
-      "source_sha256": "f99c8750b48ca3f54273e61eba4f8e2f188c2675f8b707cce8d8558124b4aeb6",
+      "source": "output/store-110/raw/pt-BR/ipad/multiview.jpg",
+      "source_sha256": "fde56f56376561f5e8c0ee37e3d8b1c067cb9b20c2e3aebfd6a04b949769dacc",
       "output": "assets/screens/pt-BR/ipad.webp",
-      "output_sha256": "742786542e06cd364ed811fd7b50c9cab0d3d8cadb5a2cf8b3fa7c2131f3928e",
-      "bytes": 207112
+      "output_sha256": "9b9f296b794a611525b52449a8da6b0af529c73bb521a2211268722a48201e01",
+      "bytes": 171894
     },
     {
       "locale": "pt-BR",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/pt-BR/01-library.png",
-      "source_sha256": "0f687969152fa8414549eccbf097557644db90c9838bb07c574f6a18fd27aa8c",
+      "source": "output/store-110/raw/pt-BR/tv/home.jpg",
+      "source_sha256": "3e4600c148d039d2a56acc0474e3ba158f10da45ab725965fa81ccb2e355a5e6",
       "output": "assets/screens/pt-BR/tv.webp",
-      "output_sha256": "4c9f5e9083e453b23379e14649be049b4c97c3900ed16b66f844b4936f59810d",
-      "bytes": 219876
+      "output_sha256": "ccf032236f8e6941706ca25f46a83199f931fd223bd17f4cacc7793afb94f67b",
+      "bytes": 234710
+    },
+    {
+      "locale": "pt-BR",
+      "device": "guide",
+      "source": "output/store-110/raw/pt-BR/tv/guide.jpg",
+      "source_sha256": "9948663c6b0e220fcef50c801b8b6e07ebca57bd031189422c3e7877e7cd0d65",
+      "output": "assets/screens/pt-BR/guide.webp",
+      "output_sha256": "8db1ef57decdf581cf071da2087cb0c128ae264cd27dc68436bb95b88f037055",
+      "bytes": 88928
     },
     {
       "locale": "pt-PT",
       "device": "iphone",
-      "source": "release/app-store/raw/pt-PT/iphone/01-library.png",
-      "source_sha256": "ea868e2688319d93a30db1156a0fdbf980b52fec8098732eeba943819bffeb4b",
+      "source": "output/store-110/raw/pt-PT/iphone/home.jpg",
+      "source_sha256": "848ea51e0cb9680a05557d53d78b6102ea63712ec7f7b55c9c543f4d693d16d4",
       "output": "assets/screens/pt-PT/iphone.webp",
-      "output_sha256": "38e243f1510ca9e7c5481ee94d582e9b6606bf566e660442e36c6156bab1709d",
-      "bytes": 182598
+      "output_sha256": "e5473c7d45a6d890776d2c7e0ba4a1c938a26c4a379c425c7af5ea79fb594ef9",
+      "bytes": 185326
     },
     {
       "locale": "pt-PT",
       "device": "ipad",
-      "source": "release/app-store/raw/pt-PT/ipad/01-library.png",
-      "source_sha256": "7ad3ab392a6aab3661eb7bf2e66872e8a6661dc638eb59ca790ff81fe28c6f30",
+      "source": "output/store-110/raw/pt-PT/ipad/multiview.jpg",
+      "source_sha256": "b8501908d7516a8e2ad4faea4e740f04eb93a87a55110b94cd579ff072131429",
       "output": "assets/screens/pt-PT/ipad.webp",
-      "output_sha256": "055b0f6c05b39e20b773522d4f450fdb8e3d384c1f4d4dd369c3190834162132",
-      "bytes": 229528
+      "output_sha256": "b8606eec2778157f9060e3ec746258c00fbe09ae00955b1ee142ec3645ffe832",
+      "bytes": 167068
     },
     {
       "locale": "pt-PT",
       "device": "tv",
-      "source": "release/app-store/tvos/raw/pt-PT/01-library.png",
-      "source_sha256": "f658bbc23ae64ac5ede8098f6f44b04c8ca0be189bb345c3f699f0e6dd749b46",
+      "source": "output/store-110/raw/pt-PT/tv/home.jpg",
+      "source_sha256": "82db4611a0410c017e137927d76b4fc1f34d7c353d4f56b8dfab2df729b1ac96",
       "output": "assets/screens/pt-PT/tv.webp",
-      "output_sha256": "06863d99f4281546a404f41a100a8d0100e88d6219a1614ab92601b0c0be3fa5",
-      "bytes": 229272
+      "output_sha256": "bebbfa619aae9e415dab9893cec73bca96f7af5ae3d3b2db166f4c17b383f455",
+      "bytes": 244816
+    },
+    {
+      "locale": "pt-PT",
+      "device": "guide",
+      "source": "output/store-110/raw/pt-PT/tv/guide.jpg",
+      "source_sha256": "9df2a666e26d6d18c8f4d7d3d9ef45fde1246593a87fd6e775ec2f3d76ac5a81",
+      "output": "assets/screens/pt-PT/guide.webp",
+      "output_sha256": "0666e8ad59ed903f0d920bb30e11c2fa0ad4d1c67dde0d19c67d62428205d7f6",
+      "bytes": 89616
     }
   ],
   "social_assets": [
     {
       "locale": "es",
-      "source": "release/app-store/tvos/raw/es-ES/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/es-ES/tv/home.jpg",
+      "source_sha256": "0ad81c4b7f2aae6ce45fde77afe174014476e92d4e3bddca3bf79eff33853f5c",
       "output": "assets/screens/es/tv.jpg",
-      "output_sha256": "c747d127170f8b3c13cecfbc01b7e43ed5a25aebc15cf4b8aba8f74027ad4fc7"
+      "output_sha256": "7b68434ad6d4a4a774f9452a145a115a36adc6742011317ee1bbd509f1d2ee5c"
     },
     {
       "locale": "es-419",
-      "source": "release/app-store/tvos/raw/es-MX/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/es-MX/tv/home.jpg",
+      "source_sha256": "292599a31a7ffcf09d15f6acaf455d45c5f5a9aadb73b0499511fad99fd0c6fe",
       "output": "assets/screens/es-419/tv.jpg",
-      "output_sha256": "ecc95cf49aed0b8c6bc2e3d2f277cee4c3b90378e5f7c836b10bd6b4eb468b72"
+      "output_sha256": "6b5f5fa1c7ccbb0de50ea2f1eaec86e435c6a24983ecfe954556fbef980b0742"
     },
     {
       "locale": "en",
-      "source": "release/app-store/tvos/raw/en-US/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/en-US/tv/home.jpg",
+      "source_sha256": "f7b75099fc90d200881f1f2227ed15225f95cdb0155c406b794318df19c91479",
       "output": "assets/screens/en/tv.jpg",
-      "output_sha256": "c9f197845b5cd8cc5f6cee16af305cdb0ced537bd3e4c6a6aa6c020c21c03132"
+      "output_sha256": "c5ee32bc493a4e9fc4337d93b0682c08eb78d84a55dd5b5a01d7584ad90cc455"
     },
     {
       "locale": "fr",
-      "source": "release/app-store/tvos/raw/fr-FR/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/fr-FR/tv/home.jpg",
+      "source_sha256": "02f0589141f6387610ddcaf1ef5b242ca5607be862ed6ef7b877f8b4de46adab",
       "output": "assets/screens/fr/tv.jpg",
-      "output_sha256": "55893d0d50d064504c21e351f0954de845fc0357f9066f7465ad728c3ddeea95"
+      "output_sha256": "c01a7523b19f74fb954ea1e2b50c2e1061c5706f955cf8fffd72bcbaeba7af2b"
     },
     {
       "locale": "it",
-      "source": "release/app-store/tvos/raw/it/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/it/tv/home.jpg",
+      "source_sha256": "94d27aba98e6b656f8caa3292997f04441bb10924b9e71f852e644bf86db8732",
       "output": "assets/screens/it/tv.jpg",
-      "output_sha256": "5b354142dbbc1a8e7e41ce8beac5e6fd49945b5aeabb00e2ad419a4a8bc203fb"
+      "output_sha256": "8e683143f1ef1ceab8f7bdbf22cc6ac3e3ff2be839348808ab6db4c2fded7377"
     },
     {
       "locale": "de",
-      "source": "release/app-store/tvos/raw/de-DE/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/de-DE/tv/home.jpg",
+      "source_sha256": "a9422c5abea34c3f425575d4c90d55c4c2910839e283aa1bdd7e2f306ba4d4af",
       "output": "assets/screens/de/tv.jpg",
-      "output_sha256": "05eade1642cd35246f4e63778b6ce45cb845fbc0cb665f68549b0319619f22b4"
+      "output_sha256": "44e23d465fe39fee42eac6e4cfbbd566332cb950d44b910ef4d9e7cc1db1cdc2"
     },
     {
       "locale": "nl",
-      "source": "release/app-store/tvos/raw/nl-NL/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/nl-NL/tv/home.jpg",
+      "source_sha256": "1a2e2ebf3cc532432dca6e3e56d80c49da0b043d3b967778ef087d748cb68126",
       "output": "assets/screens/nl/tv.jpg",
-      "output_sha256": "92e1564f39590d98f2f5a244ea88a4f023753f41ef0fdce692f84b41cc4727a6"
+      "output_sha256": "88bf34565f8ad87743baa36082db3ab73838f1cee95a76c6a39f7dc4fbc4c2a0"
     },
     {
       "locale": "ar",
-      "source": "release/app-store/tvos/raw/ar-SA/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/ar-SA/tv/home.jpg",
+      "source_sha256": "99fa794060c4b9eb942bdd2935a94195b91dd68e13fee4d3a4e589af297ee047",
       "output": "assets/screens/ar/tv.jpg",
-      "output_sha256": "cd91c977b46833748a6379b94f307caa1e08349ed7f60025a0a272c32d368d6b"
+      "output_sha256": "8a2d5c5f90b4113a5e2ba90b0ff91bd500956709d1ee0e189978ab813ed1c869"
     },
     {
       "locale": "id",
-      "source": "release/app-store/tvos/raw/id/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/id/tv/home.jpg",
+      "source_sha256": "76435c7d9684e4d86d70cdddb10a9c318143cb3d9ab85dace35dcd20b8d49c6e",
       "output": "assets/screens/id/tv.jpg",
-      "output_sha256": "c1f5fcdb5bbbacf742e4b2125555f6928cab3fdce165389c71bd9e032579e172"
+      "output_sha256": "137646bbe3e664bc0df66959420220dbf5cc829dc559e2ddd1d6b150055b08b6"
     },
     {
       "locale": "tr",
-      "source": "release/app-store/tvos/raw/tr/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/tr/tv/home.jpg",
+      "source_sha256": "efc735f69d78286afa5cde48327053e881250ec1e18d8fe0a3cc06dbf486ec17",
       "output": "assets/screens/tr/tv.jpg",
-      "output_sha256": "8ffc0a6420442d642ae07344a77748591f65dec91db3b37d4fa0cd814f4b7a26"
+      "output_sha256": "78d724cbfa043c77e38fd02e9df7486a70f1ca0ca9e8dee2ed231fe5a89e436b"
     },
     {
       "locale": "pt-BR",
-      "source": "release/app-store/tvos/raw/pt-BR/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/pt-BR/tv/home.jpg",
+      "source_sha256": "3e4600c148d039d2a56acc0474e3ba158f10da45ab725965fa81ccb2e355a5e6",
       "output": "assets/screens/pt-BR/tv.jpg",
-      "output_sha256": "d7d78b8303b1c0b63f7db69efc87c4aba1702d3e166b78a95559f3cb9cd2fd1c"
+      "output_sha256": "45d63bcdcaa1a557ddff26bdad4cb7b013ee4c8d2ffb6abcd16068b0da7b17e3"
     },
     {
       "locale": "pt-PT",
-      "source": "release/app-store/tvos/raw/pt-PT/01-library.png",
+      "device": "tv",
+      "source": "output/store-110/raw/pt-PT/tv/home.jpg",
+      "source_sha256": "82db4611a0410c017e137927d76b4fc1f34d7c353d4f56b8dfab2df729b1ac96",
       "output": "assets/screens/pt-PT/tv.jpg",
-      "output_sha256": "7a93011a08107c2ff9591d2b183f8aa57eda1b0e67ce0c0e14a32a0173c2fa28"
+      "output_sha256": "0f33d025ccf9234d14e1cb730bad1131dd702da533b4a560172fa696895ff21e"
     }
   ]
 }

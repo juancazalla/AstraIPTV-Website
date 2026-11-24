@@ -100,28 +100,28 @@ def check():
                     if url.fragment:
                         assert url.fragment in pages[str(target.relative_to(ROOT))].ids,(name,attrs[key])
     manifest=json.loads((ROOT/'assets/screens/manifest.json').read_text())
-    assert len(manifest['assets'])==36
+    locales = {locale['code'] for locale in build.LOCALES}
+    expected = {(locale, device) for locale in locales for device in ('iphone', 'ipad', 'tv', 'guide')}
+    assert manifest['campaign'] == build.CONFIG['app_version'], 'Screenshots must match the advertised version'
+    assert len(manifest['assets']) == len(expected)
+    assert {(asset['locale'], asset['device']) for asset in manifest['assets']} == expected
     for asset in manifest['assets']:
+        assert asset['output'] == f"assets/screens/{asset['locale']}/{asset['device']}.webp", asset['output']
         raw=(ROOT/asset['output']).read_bytes()
         assert hashlib.sha256(raw).hexdigest()==asset['output_sha256'],asset['output']
         assert raw[:4]==b'RIFF' and raw[8:12]==b'WEBP',asset['output']
-    assert len(manifest['social_assets'])==12
+    assert len(manifest['social_assets']) == len(locales)
+    assert {asset['locale'] for asset in manifest['social_assets']} == locales
     for asset in manifest['social_assets']:
         raw=(ROOT/asset['output']).read_bytes()
         assert hashlib.sha256(raw).hexdigest()==asset['output_sha256'],asset['output']
         assert raw[:2]==b'\xff\xd8',asset['output']
-    guide_manifest=json.loads((ROOT/'assets/screens/guide-manifest.json').read_text())
-    assert {asset['locale'] for asset in guide_manifest['assets']}=={lc['code'] for lc in build.LOCALES}
-    assert len(guide_manifest['assets'])==len(build.LOCALES)
-    for asset in guide_manifest['assets']:
-        raw=(ROOT/asset['output']).read_bytes()
-        assert hashlib.sha256(raw).hexdigest()==asset['output_sha256'],asset['output']
-        assert raw[:4]==b'RIFF' and raw[8:12]==b'WEBP',asset['output']
     sitemap=ET.parse(ROOT/'sitemap.xml')
     listed=[node.text for node in sitemap.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
     expected={build.public_url(lc['code'],kind) for lc in build.LOCALES for kind in build.PAGES}
     expected.update(build.CONFIG['base_url']+build.android_route(code,kind) for code in ('es','en') for kind in ('privacy','support'))
     assert set(listed)==expected and len(listed)==len(expected),'sitemap missing or duplicate page'
-    print(f'Validated {len(pages)} pages, {references} references, 12 reciprocal language menus, 36 original screenshots, 12 guide screenshots and 12 social previews.')
+    print(f"Validated {len(pages)} pages, {references} references, {len(locales)} reciprocal language menus, "
+          f"{len(manifest['assets'])} native screenshots and {len(manifest['social_assets'])} social previews.")
 
 if __name__=='__main__':check()
